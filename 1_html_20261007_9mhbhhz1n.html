@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 1: Konsep Dasar Sejarah - Sejarah Kelas X SMK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-gold: #B8941F;
+            --cream: #F5F0E6;
+            --dark: #1A1A1A;
+            --text-gray: #4A4A4A;
+            --white: #FFFFFF;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f0e6 0%, #e8e0d0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        .navbar {
+            background: var(--dark);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        /* Hero Chapter */
+        .chapter-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .chapter-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
+        }
+        .chapter-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .chapter-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .chapter-objective {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            position: relative;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-outline {
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+        .btn-outline:hover { background: var(--primary-gold); color: var(--dark); }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: var(--white);
+            margin-top: -2rem;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Typography & Components */
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--dark);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-gold);
+            display: inline-block;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-left: 4px solid var(--primary-gold);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .case-study {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .case-study h4 { color: var(--dark-gold); margin-bottom: 0.5rem; }
+        .reflection {
+            background: var(--dark);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .reflection h4 { color: var(--primary-gold); margin-bottom: 0.5rem; }
+
+        /* Tables */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .styled-table th {
+            background: var(--dark);
+            color: var(--primary-gold);
+            padding: 1rem;
+            text-align: left;
+            font-family: 'Playfair Display', serif;
+        }
+        .styled-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .styled-table tr:hover { background: var(--cream); }
+
+        /* Video Placeholder */
+        .video-placeholder {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            margin: 1.5rem 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        .video-placeholder span { font-size: 3rem; margin-bottom: 0.5rem; }
+
+        /* Formative Test Styles */
+        .test-section {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+            border: 2px solid var(--primary-gold);
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+        .question-block {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #eee;
+        }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .options label {
+            display: block;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 0.75rem; }
+        
+        .essay-checklist {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+        }
+        .essay-checklist label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .essay-checklist input[type="checkbox"] {
+            margin-top: 0.25rem;
+            accent-color: var(--primary-gold);
+        }
+
+        .result-box {
+            background: var(--dark);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+        .result-box.show { display: block; animation: fadeIn 0.5s; }
+        .score-display {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-action {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-submit { background: var(--primary-gold); color: var(--dark); }
+        .btn-pdf { background: var(--dark); color: var(--primary-gold); border: 1px solid var(--primary-gold); }
+        .btn-email { background: #2563eb; color: white; }
+        .btn-reset { background: var(--error); color: white; }
+        .btn-action:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .warning-text {
+            color: var(--error);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .chapter-hero h1 { font-size: 1.75rem; }
+            .container { padding: 2rem 1rem; }
+            .action-buttons { flex-direction: column; }
+            .btn-action { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Sejarah Kelas X</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li><a href="index.html#bab">Daftar Bab</a></li>
+                <li><a href="index.html#kontak">Penulis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <section class="chapter-hero">
+        <span class="chapter-badge">Pertemuan 1</span>
+        <h1>Konsep Dasar Sejarah</h1>
+        <p class="chapter-objective">
+            Memahami pengertian sejarah, peranan manusia dalam sejarah, serta konsep ruang dan waktu 
+            dalam mempelajari peristiwa masa lampau untuk membangun kesadaran historis yang kuat.
+        </p>
+        <div class="chapter-nav">
+            <a href="index.html" class="btn btn-outline">← Kembali ke Daftar Bab</a>
+            <a href="#mulai-baca" class="btn btn-primary">Mulai Membaca</a>
+            <a href="2.html" class="btn btn-outline">Bab Selanjutnya →</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container" id="mulai-baca">
+        
+        <h2 class="section-title">Pendahuluan</h2>
+        <p>
+            Sejarah bukan sekadar kumpulan tanggal dan nama tokoh. Sejarah adalah ilmu yang mempelajari 
+            peristiwa masa lalu yang memiliki dampak pada masa kini dan masa depan. Konsep <strong>ruang (spasial)</strong> 
+            dan <strong>waktu (temporal)</strong> adalah fondasi utama dalam memahami setiap peristiwa sejarah. 
+            Tanpa pemahaman yang baik tentang konsep dasar ini, siswa akan kesulitan membedakan antara 
+            fakta sejarah, fiksi, atau dongeng belaka.
+        </p>
+        <p style="margin-top: 1rem;">
+            Dalam pembelajaran ini, kita akan menjelajahi bagaimana para ahli mendefinisikan sejarah, 
+            mengapa manusia menjadi pusat dari kajian sejarah, serta bagaimana cara kita menganalisis 
+            peristiwa masa lalu dengan pendekatan yang tepat.
+        </p>
+
+        <div class="highlight-box">
+            <h3>🔑 Konsep Kunci</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><strong>Sejarah (History/Geschichte):</strong> Peristiwa masa lalu yang benar-benar terjadi dan memiliki pengaruh.</li>
+                <li><strong>Ruang (Dimensi Spasial):</strong> Tempat atau lokasi geografis di mana peristiwa sejarah terjadi.</li>
+                <li><strong>Waktu (Dimensi Temporal):</strong> Kronologi, periode, dan durasi terjadinya peristiwa.</li>
+            </ul>
+        </div>
+
+        <div class="case-study">
+            <h4>📖 Studi Kasus 1: Kesalahpahaman Sejarah sebagai Dongeng</h4>
+            <p>
+                Di sebuah kelas X, seorang siswa menganggap cerita tentang Kerajaan Atlantis sebagai fakta 
+                sejarah murni karena membacanya di media sosial. Tanpa verifikasi sumber dan bukti artefak, 
+                siswa tersebut menyebarkannya sebagai kebenaran mutlak.
+            </p>
+            <p style="margin-top: 1rem; font-weight: 600; color: var(--dark-gold);">
+                Pembelajaran: Sejarah memerlukan bukti dan metode ilmiah (heuristik, verifikasi, interpretasi, historiografi), bukan sekadar cerita yang tidak terverifikasi.
+            </p>
+        </div>
+
+        <div class="reflection">
+            <h4>💭 Refleksi untuk Siswa Indonesia</h4>
+            <p>
+                Di Indonesia yang kaya akan sejarah perjuangan, memahami konsep ruang dan waktu membantu kita 
+                menghargai perjuangan para pahlawan di berbagai daerah pada masanya. Misalnya, memahami 
+                mengapa Pertempuran Surabaya terjadi pada 10 November 1945 (waktu) di kota Surabaya (ruang) 
+                memberikan konteks yang utuh tentang semangat arek-arek Suroboyo.
+            </p>
+        </div>
+
+        <h2 class="section-title">1.1 Landasan Teoretis: Pengertian Sejarah</h2>
+        <p>
+            Pemahaman tentang definisi sejarah dari berbagai tokoh penting untuk memperkaya perspektif kita:
+        </p>
+        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+            <li style="margin-bottom: 0.75rem;"><strong>Herodotus (Bapak Sejarah Dunia):</strong> Sejarah tidak berkembang ke arah depan dengan tujuan yang pasti, melainkan bergerak seperti garis lingkaran yang tinggi rendahnya diakibatkan oleh keadaan manusia.</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Ibnu Khaldun:</strong> Catatan tentang masyarakat umat manusia atau peradaban dunia, tentang perubahan-perubahan yang terjadi pada watak masyarakat itu.</li>
+            <li style="margin-bottom: 0.75rem;"><strong>R. Moh. Ali:</strong> Sejarah adalah ilmu yang mempelajari peristiwa-peristiwa, perubahan-perubahan, dan perkembangan dalam kehidupan masyarakat di masa lampau.</li>
+        </ul>
+
+        <div class="video-placeholder">
+            <span>▶</span>
+            <p>Video: Pengantar Konsep Dasar Sejarah</p>
+            <small>Sumber: Kanal Pendidikan Sejarah / Youtube</small>
+        </div>
+
+        <h2 class="section-title">1.2 Konsep Ruang dan Waktu dalam Sejarah</h2>
+        <p>
+            Dua konsep ini adalah "nyawa" dari setiap kajian sejarah. Tanpa ruang dan waktu, sebuah peristiwa 
+            kehilangan konteksnya.
+        </p>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Konsep</th>
+                    <th>Penjelasan</th>
+                    <th>Contoh Penerapan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Diakronik</strong></td>
+                    <td>Memanjang dalam waktu, menyempit dalam ruang. Fokus pada proses, urutan, dan kronologi.</td>
+                    <td>Sejarah Pergerakan Nasional Indonesia (1908-1945)</td>
+                </tr>
+                <tr>
+                    <td><strong>Sinkronik</strong></td>
+                    <td>Melebar dalam ruang, menyempit dalam waktu. Fokus pada struktur, kondisi, atau fenomena pada satu waktu tertentu.</td>
+                    <td>Kehidupan Sosial-Ekonomi Masyarakat Jawa pada Abad ke-19</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">1.3 Peranan Manusia dalam Sejarah</h2>
+        <p>Menurut Kuntowijoyo, sejarah memiliki empat dimensi pengertian yang melibatkan manusia:</p>
+        <div class="highlight-box">
+            <ol style="margin-left: 1.5rem;">
+                <li><strong>Sejarah sebagai Peristiwa (Geschichte):</strong> Kejadian yang benar-benar terjadi, bersifat objektif, dan tidak dapat diulang.</li>
+                <li><strong>Sejarah sebagai Kisah (Geschichtsschreibung):</strong> Narasi atau rekonstruksi peristiwa yang dibuat oleh sejarawan (bersifat subjektif tergantung penulis).</li>
+                <li><strong>Sejarah sebagai Ilmu:</strong> Memiliki metode, teori, objek, dan syarat ilmiah (empiris, objektif, teoritis, umum, kumulatif).</li>
+                <li><strong>Sejarah sebagai Seni:</strong> Memerlukan intuisi, emosi, gaya bahasa, dan imajinasi dalam penulisannya agar menarik.</li>
+            </ol>
+        </div>
+
+        <h2 class="section-title">1.4 Teknik Mempelajari Sejarah</h2>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Teknik</th>
+                    <th>Deskripsi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Membaca Sumber</strong></td>
+                    <td>Membedakan sumber primer (saksi hidup/artefak) dan sumber sekunder (buku teks).</td>
+                </tr>
+                <tr>
+                    <td><strong>Garis Waktu (Timeline)</strong></td>
+                    <td>Membuat visualisasi kronologis peristiwa untuk memahami hubungan sebab-akibat.</td>
+                </tr>
+                <tr>
+                    <td><strong>Kunjungan Situs</strong></td>
+                    <td>Observasi langsung ke museum, candi, atau monumen untuk merasakan dimensi ruang sejarah.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box" style="border-left-color: var(--error);">
+            <h4>⚠️ Kesalahpahaman Umum tentang Sejarah</h4>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>Menganggap sejarah hanya hafalan tahun dan nama.</li>
+                <li>Menyamakan mitos atau legenda dengan fakta sejarah tanpa verifikasi.</li>
+                <li>Beranggapan sejarah tidak relevan dengan kehidupan masa kini.</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">Kesimpulan</h2>
+        <p>
+            Konsep dasar sejarah merupakan fondasi untuk memahami masa lalu secara utuh. Dengan memahami 
+            pengertian sejarah menurut para ahli, konsep ruang dan waktu (diakronik dan sinkronik), serta 
+            peranan manusia sebagai subjek dan objek, siswa dapat membangun pola pikir historis yang kritis. 
+            Sejarah bukan hanya tentang apa yang terjadi, tetapi mengapa dan bagaimana hal itu terjadi, 
+            serta apa dampaknya bagi kita hari ini.
+        </p>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">📚 Daftar Pustaka</h3>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; font-size: 0.95rem; color: var(--text-gray);">
+            <li>Kuntowijoyo. (2013). <em>Pengantar Ilmu Sejarah</em>. Yogyakarta: Bentang Pustaka.</li>
+            <li>Moh. Ali, R. (1984). <em>Pengantar Ilmu Sejarah Indonesia</em>. Jakarta: Bharata Karya Aksara.</li>
+            <li>Sartono Kartodirdjo. (1992). <em>Pendekatan Ilmu Sosial dalam Metodologi Sejarah</em>. Jakarta: Gramedia.</li>
+            <li>Supriadi. (2024). <em>Sejarah Kelas X SMK Kurikulum Merdeka</em>. Bukittinggi: FTIK UIN Bukittinggi.</li>
+        </ul>
+
+        <div style="margin-top: 3rem; display: flex; justify-content: space-between;">
+            <a href="index.html" class="btn btn-outline">← Kembali ke Daftar Bab</a>
+            <a href="#uji-formatif" class="btn btn-primary">Lanjut ke Uji Formatif ↓</a>
+        </div>
+
+        <!-- Formative Test Section -->
+        <div class="test-section" id="uji-formatif">
+            <div class="test-header">
+                <h2>📋 Uji Formatif 1: Konsep Dasar Sejarah</h2>
+                <p>Materi: Pengertian sejarah, konsep ruang & waktu, peranan manusia, serta pendekatan diakronik-sinkronik.</p>
+                <p class="warning-text" id="warningMsg">⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu!</p>
+            </div>
+
+            <form id="formatifForm">
+                <h3 style="margin-bottom: 1.5rem; color: var(--dark-gold);">📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label>* Nama Lengkap</label>
+                        <input type="text" id="nama" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* NIS</label>
+                        <input type="text" id="nis" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Tanggal Ujian</label>
+                        <input type="date" id="tanggal" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Kelas</label>
+                        <select id="kelas" class="form-control" required>
+                            <option value="">Pilih Kelas</option>
+                            <option value="X TKJ 1">X TKJ 1</option>
+                            <option value="X TKJ 2">X TKJ 2</option>
+                            <option value="X TBSM 1">X TBSM 1</option>
+                            <option value="X TBSM 2">X TBSM 2</option>
+                            <option value="X DKV 1">X DKV 1</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">📋 Bagian A – Pilihan Ganda (10 Soal, 10 poin/soal)</h3>
+                
+                <div class="question-block">
+                    <p class="question-text">1. Kata "sejarah" dalam bahasa Arab berasal dari kata "syajaratun" yang berarti...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> a. Pohon</label>
+                        <label><input type="radio" name="q1" value="b"> b. Cerita</label>
+                        <label><input type="radio" name="q1" value="c"> c. Masa lalu</label>
+                        <label><input type="radio" name="q1" value="d"> d. Peristiwa</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Bapak Sejarah Dunia yang menulis karya berjudul "Histories" adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> a. Herodotus</label>
+                        <label><input type="radio" name="q2" value="b"> b. Ibnu Khaldun</label>
+                        <label><input type="radio" name="q2" value="c"> c. Aristoteles</label>
+                        <label><input type="radio" name="q2" value="d"> d. R. Moh. Ali</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Konsep sejarah yang mempelajari peristiwa secara memanjang dalam waktu disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> a. Diakronik</label>
+                        <label><input type="radio" name="q3" value="b"> b. Sinkronik</label>
+                        <label><input type="radio" name="q3" value="c"> c. Kronologis</label>
+                        <label><input type="radio" name="q3" value="d"> d. Periodisasi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Unsur utama dalam sejarah yang menjadi pelaku sekaligus subjek penelitian adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="a"> a. Manusia</label>
+                        <label><input type="radio" name="q4" value="b"> b. Alam</label>
+                        <label><input type="radio" name="q4" value="c"> c. Waktu</label>
+                        <label><input type="radio" name="q4" value="d"> d. Ruang</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Menurut Kuntowijoyo, sejarah memiliki empat pengertian, <em>kecuali</em>...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="a"> a. Sejarah sebagai peristiwa</label>
+                        <label><input type="radio" name="q5" value="b"> b. Sejarah sebagai kisah</label>
+                        <label><input type="radio" name="q5" value="c"> c. Sejarah sebagai ilmu</label>
+                        <label><input type="radio" name="q5" value="d"> d. Sejarah sebagai ramalan</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">6. Pendekatan yang mempelajari fenomena sejarah pada waktu tertentu tetapi meluas dalam ruang disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> a. Diakronik</label>
+                        <label><input type="radio" name="q6" value="b"> b. Sinkronik</label>
+                        <label><input type="radio" name="q6" value="c"> c. Historiografi</label>
+                        <label><input type="radio" name="q6" value="d"> d. Heuristik</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">7. Sejarah dikatakan sebagai ilmu karena memiliki syarat-syarat ilmiah, <em>kecuali</em>...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="a"> a. Bersifat empiris</label>
+                        <label><input type="radio" name="q7" value="b"> b. Memiliki teori</label>
+                        <label><input type="radio" name="q7" value="c"> c. Bersifat subjektif mutlak</label>
+                        <label><input type="radio" name="q7" value="d"> d. Bersifat objektif</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">8. Peristiwa masa lalu yang benar-benar terjadi dan tidak dapat diulang disebut sejarah sebagai...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> a. Peristiwa (Geschichte)</label>
+                        <label><input type="radio" name="q8" value="b"> b. Kisah (Geschichtsschreibung)</label>
+                        <label><input type="radio" name="q8" value="c"> c. Ilmu</label>
+                        <label><input type="radio" name="q8" value="d"> d. Seni</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">9. Fungsi sejarah yang memberikan pelajaran moral dan nilai bagi generasi penerus disebut fungsi...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="a"> a. Edukatif</label>
+                        <label><input type="radio" name="q9" value="b"> b. Inspiratif</label>
+                        <label><input type="radio" name="q9" value="c"> c. Rekreatif</label>
+                        <label><input type="radio" name="q9" value="d"> d. Instruktif</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">10. Konsep waktu dalam sejarah mencakup kronologi, periode, dan...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> a. Lokasi</label>
+                        <label><input type="radio" name="q10" value="b"> b. Durasi</label>
+                        <label><input type="radio" name="q10" value="c"> c. Artefak</label>
+                        <label><input type="radio" name="q10" value="d"> d. Fosil</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">✍️ Bagian B – Essay (Penilaian Mandiri)</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-gray);">
+                    <em>Jawablah pertanyaan di bawah ini pada kertas atau kolom catatan Anda, lalu centang kotak di bawah jika jawaban Anda sudah memuat konsep kunci yang disebutkan. Setiap centang bernilai 5 poin (Total 20 poin/soal).</em>
+                </p>
+
+                <div class="question-block">
+                    <p class="question-text">1. Jelaskan pengertian sejarah menurut R. Moh. Ali dan bagaimana kaitannya dengan konsep ruang dan waktu!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Menyebutkan sejarah sebagai ilmu yang mempelajari peristiwa masa lalu.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Menyebutkan adanya hubungan sebab-akibat.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Menjelaskan konsep ruang (tempat/lokasi kejadian).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Menjelaskan konsep waktu (kronologi/periode).</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Apa perbedaan mendasar antara sejarah diakronik dan sinkronik? Berikan masing-masing satu contoh!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Diakronik: memanjang dalam waktu, menyempit dalam ruang.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Sinkronik: melebar dalam ruang, menyempit dalam waktu.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Memberikan contoh diakronik yang tepat (misal: kronologi perjuangan).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Memberikan contoh sinkronik yang tepat (misal: kondisi sosial pada tahun tertentu).</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Mengapa sejarah dikatakan sebagai ilmu dan sekaligus sebagai seni? Jelaskan argumen Anda!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Ilmu: memiliki metode, teori, objek, dan syarat ilmiah (empiris, objektif).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Seni: memerlukan intuisi, imajinasi, dan gaya bahasa dalam penulisan.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Menyebutkan peran sejarawan dalam merekonstruksi kisah.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Argumen logis yang menghubungkan kedua aspek tersebut.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Analisis peranan manusia sebagai subjek dan objek dalam sejarah!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Subjek: Manusia sebagai pelaku yang membuat sejarah.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Objek: Manusia sebagai topik yang dipelajari/diteliti.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Menyebutkan bahwa tanpa manusia, tidak ada sejarah.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Contoh konkret peranan manusia dalam peristiwa sejarah.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Berdasarkan studi kasus, mengapa penting membedakan antara sejarah sebagai peristiwa dan sejarah sebagai kisah?</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Peristiwa: objektif, benar-benar terjadi, tidak dapat diulang.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Kisah: subjektif, tergantung interpretasi penulis/sejarawan.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Penting untuk menghindari hoaks atau penyamaran dongeng sebagai fakta.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Perlunya verifikasi sumber dalam menerima informasi sejarah.</label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                </div>
+
+                <!-- Result Box -->
+                <div class="result-box" id="resultBox">
+                    <h3 style="color: var(--primary-gold); margin-bottom: 1rem;">📊 Hasil Uji Formatif</h3>
+                    <div class="score-display" id="totalScore">0</div>
+                    <p style="margin: 1rem 0; font-size: 1.1rem;">
+                        Bagian A (PG): <span id="scorePG" style="color: var(--primary-gold); font-weight: 700;">0</span>/100 | 
+                        Bagian B (Essay): <span id="scoreEssay" style="color: var(--primary-gold); font-weight: 700;">0</span>/100
+                    </p>
+                    <p id="feedbackText" style="margin-bottom: 1.5rem; font-style: italic;"></p>
+                    
+                    <div class="action-buttons">
+                        <button type="button" class="btn-action btn-pdf" onclick="unduhPDF()">📥 UNDUH PDF LENGKAP</button>
+                        <button type="button" class="btn-action btn-email" onclick="kirimEmail()">✉️ KIRIM EMAIL KE GURU</button>
+                        <button type="button" class="btn-action btn-reset" onclick="mulaiUlang()">🔄 MULAI ULANG</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Kunci Jawaban PG
+        const kunciPG = {
+            q1: 'a', q2: 'a', q3: 'a', q4: 'a', q5: 'd',
+            q6: 'b', q7: 'c', q8: 'a', q9: 'a', q10: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+            const warningMsg = document.getElementById('warningMsg');
+
+            // Validasi Data
+            if (!nama || !nis || !tanggal || !kelas) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua Data Siswa terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            // Validasi PG (harus dijawab semua)
+            let allPGAnswered = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    allPGAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allPGAnswered) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            warningMsg.style.display = 'none';
+
+            // Hitung Skor PG
+            let skorPG = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (selected === kunciPG[`q${i}`]) {
+                    skorPG += 10;
+                }
+            }
+
+            // Hitung Skor Essay (Self-Assessment)
+            let skorEssay = 0;
+            const essayChecks = document.querySelectorAll('.essay-check:checked');
+            skorEssay = essayChecks.length * 5; // 5 poin per checklist
+
+            // Total Skor
+            const totalSkor = skorPG + skorEssay;
+
+            // Tampilkan Hasil
+            document.getElementById('scorePG').textContent = skorPG;
+            document.getElementById('scoreEssay').textContent = skorEssay;
+            document.getElementById('totalScore').textContent = totalSkor;
+            
+            const feedback = document.getElementById('feedbackText');
+            if (totalSkor >= 85) {
+                feedback.textContent = '🌟 Luar biasa! Pemahaman Anda tentang konsep dasar sejarah sangat baik.';
+            } else if (totalSkor >= 70) {
+                feedback.textContent = '👍 Bagus! Anda memahami konsep dasar, namun perlu sedikit pendalaman pada bagian yang kurang.';
+            } else {
+                feedback.textContent = '📚 Perlu belajar lagi. Silakan baca ulang materi dan perhatikan konsep ruang, waktu, serta perbedaan diakronik-sinkronik.';
+            }
+
+            document.getElementById('resultBox').classList.add('show');
+            
+            // Disable form setelah submit
+            const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+            inputs.forEach(input => input.disabled = true);
+            
+            window.scrollTo({ top: document.getElementById('resultBox').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function unduhPDF() {
+            const element = document.getElementById('uji-formatif');
+            const nama = document.getElementById('nama').value;
+            const opt = {
+                margin: 10,
+                filename: `Uji_Formatif_1_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            // Temporary enable inputs for PDF capture if needed, but html2pdf captures as is
+            html2pdf().set(opt).from(element).save();
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const skorPG = document.getElementById('scorePG').textContent;
+            const skorEssay = document.getElementById('scoreEssay').textContent;
+            const total = document.getElementById('totalScore').textContent;
+
+            const subject = `Hasil Uji Formatif 1 - ${nama} (${kelas})`;
+            const body = `Yth. Bapak/Ibu Guru,\n\nBerikut adalah hasil Uji Formatif 1 saya:\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\n\nSkor Pilihan Ganda: ${skorPG}/100\nSkor Essay (Self-Assessment): ${skorEssay}/100\nTotal Skor: ${total}/200\n\nTerima kasih.`;
+            
+            window.location.href = `mailto:hafizafizalubi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function mulaiUlang() {
+            if (confirm('Apakah Anda yakin ingin mengulang uji formatif? Semua jawaban akan dihapus.')) {
+                document.getElementById('formatifForm').reset();
+                document.getElementById('resultBox').classList.remove('show');
+                
+                const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+                inputs.forEach(input => input.disabled = false);
+                
+                document.getElementById('warningMsg').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

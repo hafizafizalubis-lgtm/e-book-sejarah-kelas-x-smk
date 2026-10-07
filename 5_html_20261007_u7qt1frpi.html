@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 5: Kebudayaan Praaksara - Sejarah Kelas X SMK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-gold: #B8941F;
+            --cream: #F5F0E6;
+            --dark: #1A1A1A;
+            --text-gray: #4A4A4A;
+            --white: #FFFFFF;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f0e6 0%, #e8e0d0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        .navbar {
+            background: var(--dark);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        /* Hero Chapter */
+        .chapter-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .chapter-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
+        }
+        .chapter-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .chapter-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .chapter-objective {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            position: relative;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-outline {
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+        .btn-outline:hover { background: var(--primary-gold); color: var(--dark); }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: var(--white);
+            margin-top: -2rem;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Typography & Components */
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--dark);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-gold);
+            display: inline-block;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-left: 4px solid var(--primary-gold);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .case-study {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .case-study h4 { color: var(--dark-gold); margin-bottom: 0.5rem; }
+        .reflection {
+            background: var(--dark);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .reflection h4 { color: var(--primary-gold); margin-bottom: 0.5rem; }
+
+        /* Tables */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .styled-table th {
+            background: var(--dark);
+            color: var(--primary-gold);
+            padding: 1rem;
+            text-align: left;
+            font-family: 'Playfair Display', serif;
+        }
+        .styled-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .styled-table tr:hover { background: var(--cream); }
+
+        /* Video Placeholder */
+        .video-placeholder {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            margin: 1.5rem 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        .video-placeholder span { font-size: 3rem; margin-bottom: 0.5rem; }
+
+        /* Formative Test Styles */
+        .test-section {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+            border: 2px solid var(--primary-gold);
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+        .question-block {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #eee;
+        }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .options label {
+            display: block;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 0.75rem; }
+        
+        .essay-checklist {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+        }
+        .essay-checklist label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .essay-checklist input[type="checkbox"] {
+            margin-top: 0.25rem;
+            accent-color: var(--primary-gold);
+        }
+
+        .result-box {
+            background: var(--dark);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+        .result-box.show { display: block; animation: fadeIn 0.5s; }
+        .score-display {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-action {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-submit { background: var(--primary-gold); color: var(--dark); }
+        .btn-pdf { background: var(--dark); color: var(--primary-gold); border: 1px solid var(--primary-gold); }
+        .btn-email { background: #2563eb; color: white; }
+        .btn-reset { background: var(--error); color: white; }
+        .btn-action:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .warning-text {
+            color: var(--error);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .chapter-hero h1 { font-size: 1.75rem; }
+            .container { padding: 2rem 1rem; }
+            .action-buttons { flex-direction: column; }
+            .btn-action { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Sejarah Kelas X</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li><a href="index.html#bab">Daftar Bab</a></li>
+                <li><a href="index.html#kontak">Penulis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <section class="chapter-hero">
+        <span class="chapter-badge">Pertemuan 5</span>
+        <h1>Kebudayaan Praaksara</h1>
+        <p class="chapter-objective">
+            Memahami hasil-hasil kebudayaan masyarakat praaksara tingkat lanjut (megalitikum dan perundagian) 
+            serta perkembangan tradisi lisan yang menjadi cikal bakal peradaban dan kearifan lokal Nusantara.
+        </p>
+        <div class="chapter-nav">
+            <a href="4.html" class="btn btn-outline">← Pertemuan 4</a>
+            <a href="#mulai-baca" class="btn btn-primary">Mulai Membaca</a>
+            <a href="6.html" class="btn btn-outline">Pertemuan 6 →</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container" id="mulai-baca">
+        
+        <h2 class="section-title">Pendahuluan</h2>
+        <p>
+            Kebudayaan praaksara tidak hanya terbatas pada alat-alat batu sederhana. Seiring dengan 
+            berkembangnya kemampuan kognitif dan teknologi, masyarakat praaksara Indonesia menghasilkan 
+            karya-karya budaya yang kompleks, baik berupa benda (artefak dan bangunan megalitikum) maupun 
+            non-benda (tradisi lisan, kepercayaan, dan sistem sosial). 
+        </p>
+        <p style="margin-top: 1rem;">
+            Zaman Megalitikum (Zaman Batu Besar) dan Zaman Perundagian (Zaman Logam) menandai puncak 
+            kreativitas manusia praaksara. Di saat yang sama, tradisi lisan berkembang sebagai media 
+            utama untuk mewariskan pengetahuan, nilai-nilai, dan sejarah leluhur dari satu generasi ke 
+            generasi berikutnya, jauh sebelum tulisan dikenal. Memahami warisan ini penting untuk 
+            menghargai akar budaya bangsa Indonesia yang beragam.
+        </p>
+
+        <div class="highlight-box">
+            <h3>🔑 Konsep Kunci</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><strong>Megalitikum:</strong> Kebudayaan yang menghasilkan bangunan dari batu berukuran besar, berkaitan dengan pemujaan roh nenek moyang.</li>
+                <li><strong>Perundagian:</strong> Masyarakat yang telah mengenal pembagian kerja berdasarkan keahlian (undagi) dan teknologi logam.</li>
+                <li><strong>Tradisi Lisan (Oral Tradition):</strong> Pewarisan pengetahuan, sejarah, dan nilai budaya melalui ucapan atau lisan dari generasi ke generasi.</li>
+                <li><strong>Folklore:</strong> Sebagian kebudayaan suatu kolektif yang tersebar dan diwariskan secara turun-temurun di antara kolektif apa saja, secara tradisional dalam versi yang berbeda.</li>
+            </ul>
+        </div>
+
+        <div class="case-study">
+            <h4>📖 Studi Kasus 1: Ketahanan Tradisi Lisan Suku Baduy</h4>
+            <p>
+                Masyarakat Suku Baduy di Banten hingga kini secara ketat mempertahankan tradisi lisan 
+                mereka. Mereka tidak mengenal sistem tulisan dan melarang penggunaan teknologi modern. 
+                Sejarah, aturan adat (pikukuh), dan pengetahuan tentang pertanian atau obat-obatan 
+                diwariskan sepenuhnya melalui lisan oleh para tetua adat (Puun) kepada generasi muda.
+            </p>
+            <p style="margin-top: 1rem; font-weight: 600; color: var(--dark-gold);">
+                Pembelajaran: Tradisi lisan bukan sekadar "cerita", melainkan sistem pengetahuan yang 
+                terstruktur dan menjadi identitas serta mekanisme pertahanan budaya suatu masyarakat.
+            </p>
+        </div>
+
+        <div class="reflection">
+            <h4>💭 Refleksi untuk Siswa SMK</h4>
+            <p>
+                Sebagai siswa SMK, Anda dapat berperan aktif dalam melestarikan kebudayaan praaksara. 
+                Siswa DKV dapat mendokumentasikan motif batik atau ukiran tradisional ke dalam desain digital. 
+                Siswa TBSM dapat mempelajari filosofi alat transportasi tradisional. Siswa TKJ dapat membantu 
+                mendigitalisasi arsip tradisi lisan daerah. Teknologi modern bisa menjadi alat pelestarian, 
+                bukan hanya penghancur tradisi.
+            </p>
+        </div>
+
+        <h2 class="section-title">5.1 Hasil Kebudayaan Benda Tingkat Lanjut</h2>
+        <p>
+            Pada masa Neolitikum, Megalitikum, dan Perundagian, manusia praaksara menghasilkan benda-benda 
+            budaya yang menunjukkan tingkat kecanggihan dan kompleksitas sosial yang tinggi.
+        </p>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Jenis Budaya</th>
+                    <th>Bentuk/Contoh</th>
+                    <th>Fungsi Makna</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Menhir</strong></td>
+                    <td>Tiang atau tugu batu tunggal</td>
+                    <td>Tempat pemujaan roh nenek moyang atau peringatan peristiwa penting.</td>
+                </tr>
+                <tr>
+                    <td><strong>Dolmen</strong></td>
+                    <td>Meja batu (lempengan batu datar ditopang batu lain)</td>
+                    <td>Tempat meletakkan sesaji atau tempat persemayaman sementara mayat.</td>
+                </tr>
+                <tr>
+                    <td><strong>Sarkofagus</strong></td>
+                    <td>Peti batu utuh (dari satu bongkah batu) dengan tutup</td>
+                    <td>Tempat penguburan mayat, sering ditemukan di Bali.</td>
+                </tr>
+                <tr>
+                    <td><strong>Punden Berundak</strong></td>
+                    <td>Susun batu bertingkat seperti undakan</td>
+                    <td>Tempat pemujaan tertinggi, dianggap sebagai cikal bakal bentuk candi di Indonesia.</td>
+                </tr>
+                <tr>
+                    <td><strong>Waruga</strong></td>
+                    <td>Peti kubur batu berbentuk kubus atau bulat</td>
+                    <td>Tempat penguburan mayat dengan posisi jongkok (ditemukan di Sulawesi Utara).</td>
+                </tr>
+                <tr>
+                    <td><strong>Nekara & Moko</strong></td>
+                    <td>Gendang perunggu berpinggang (Nekara dari perunggu, Moko dari perunggu/besi)</td>
+                    <td>Alat upacara, simbol kekuasaan, dan alat memanggil hujan (ditemukan di Pulau Alor, NTT).</td>
+                </tr>
+                <tr>
+                    <td><strong>Kapak Corong</strong></td>
+                    <td>Kapak perunggu dengan bagian pangkal berbentuk corong</td>
+                    <td>Alat upacara atau simbol status sosial, bukan alat kerja praktis.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">5.2 Tradisi Lisan (Oral Tradition)</h2>
+        <p>
+            Menurut Jan Harold Brunvand, folklor (tradisi lisan) adalah sebagian kebudayaan suatu kolektif 
+            yang tersebar dan diwariskan secara turun-temurun. Sebelum mengenal tulisan, tradisi lisan adalah 
+            satu-satunya cara untuk merekam dan meneruskan pengetahuan.
+        </p>
+
+        <div class="highlight-box">
+            <h4>Jenis-Jenis Tradisi Lisan:</h4>
+            <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><strong>Mite (Mitos):</strong> Cerita yang dianggap benar-benar terjadi oleh empunya cerita, berkaitan dengan dewa, penciptaan alam, atau asal-usul suku.</li>
+                <li><strong>Legenda:</strong> Cerita masa lalu yang dianggap pernah terjadi, berkaitan dengan tokoh sejarah atau tempat tertentu (misal: Legenda Danau Toba, Sangkuriang).</li>
+                <li><strong>Dongeng:</strong> Cerita fiksi yang tidak dianggap benar-benar terjadi, bertujuan untuk hiburan atau pendidikan moral (misal: Kancil, Bawang Merah Bawang Putih).</li>
+                <li><strong>Upacara Adat:</strong> Rangkaian tindakan simbolis yang diwariskan secara lisan dan praktik.</li>
+                <li><strong>Peribahasa, Teka-teki, dan Nyanyian Rakyat:</strong> Bentuk sastra lisan yang mengandung kearifan lokal.</li>
+            </ol>
+        </div>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">5.2.1 Fungsi Tradisi Lisan</h3>
+        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+            <li style="margin-bottom: 0.75rem;"><strong>Sistem Proyeksi:</strong> Mencerminkan harapan, kecemasan, dan cita-cita masyarakat.</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Alat Pengesahan:</strong> Melegitimasi pranata sosial, lembaga adat, dan kekuasaan.</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Alat Pendidikan:</strong> Menanamkan nilai-nilai moral, etika, dan norma kepada generasi muda.</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Alat Pemaksa dan Pengawas:</strong> Menjaga agar norma-norma masyarakat tetap dipatuhi melalui cerita-cerita peringatan.</li>
+        </ul>
+
+        <div class="video-placeholder">
+            <span>▶</span>
+            <p>Video: Mengungkap Misteri Situs Megalitikum dan Tradisi Lisan Nusantara</p>
+            <small>Sumber: Kanal Pendidikan Sejarah / Youtube</small>
+        </div>
+
+        <h2 class="section-title">5.3 Hubungan Kebudayaan Benda dan Tradisi Lisan</h2>
+        <p>
+            Kebudayaan benda (megalitikum) dan tradisi lisan sering kali tidak dapat dipisahkan. 
+            Banyak bangunan megalitikum yang keberadaannya disertai dengan legenda atau mitos lokal. 
+            Misalnya, situs Gunung Padang di Cianjur tidak hanya berupa tumpukan batu andesit, tetapi 
+            juga dikelilingi oleh tradisi lisan masyarakat setempat tentang kerajaan kuno dan tokoh 
+            prajurit yang berubah menjadi batu. Tradisi lisan memberikan "jiwa" dan konteks makna 
+            terhadap benda-benda fisik yang ditinggalkan oleh leluhur.
+        </p>
+
+        <h2 class="section-title">Kesimpulan</h2>
+        <p>
+            Kebudayaan praaksara tingkat lanjut menunjukkan bahwa nenek moyang bangsa Indonesia bukanlah 
+            masyarakat yang primitif atau terbelakang. Mereka mampu menciptakan karya seni batu yang megah 
+            (megalitikum), menguasai teknologi logam (perundagian), dan membangun sistem pengetahuan yang 
+            kokoh melalui tradisi lisan. Warisan budaya ini merupakan fondasi identitas bangsa yang harus 
+            dipahami, dihargai, dan dilestarikan oleh generasi muda, termasuk siswa SMK, melalui pendekatan 
+            yang relevan dengan perkembangan zaman.
+        </p>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">📚 Daftar Pustaka</h3>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; font-size: 0.95rem; color: var(--text-gray);">
+            <li>Koentjaraningrat. (2010). <em>Sejarah Teori Antropologi</em>. Jakarta: UI Press.</li>
+            <li>Brunvand, J. H. (2012). <em>Folklor: Suatu Pengantar</em>. Jakarta: PT Gramedia Pustaka Utama.</li>
+            <li>Soekmono, R. (1973). <em>Pengantar Sejarah Kebudayaan Indonesia 2</em>. Yogyakarta: Kanisius.</li>
+            <li>Supriadi. (2024). <em>Sejarah Kelas X SMK Kurikulum Merdeka</em>. Bukittinggi: FTIK UIN Bukittinggi.</li>
+        </ul>
+
+        <div style="margin-top: 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <a href="4.html" class="btn btn-outline">← Kembali ke Pertemuan 4</a>
+            <a href="#uji-formatif" class="btn btn-primary">Lanjut ke Uji Formatif ↓</a>
+        </div>
+
+        <!-- Formative Test Section -->
+        <div class="test-section" id="uji-formatif">
+            <div class="test-header">
+                <h2>📋 Uji Formatif 5: Kebudayaan Praaksara</h2>
+                <p>Materi: Hasil kebudayaan megalitikum & perundagian, serta tradisi lisan (folklor, mitos, legenda, dongeng).</p>
+                <p class="warning-text" id="warningMsg">⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu!</p>
+            </div>
+
+            <form id="formatifForm">
+                <h3 style="margin-bottom: 1.5rem; color: var(--dark-gold);">📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label>* Nama Lengkap</label>
+                        <input type="text" id="nama" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* NIS</label>
+                        <input type="text" id="nis" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Tanggal Ujian</label>
+                        <input type="date" id="tanggal" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Kelas</label>
+                        <select id="kelas" class="form-control" required>
+                            <option value="">Pilih Kelas</option>
+                            <option value="X TKJ 1">X TKJ 1</option>
+                            <option value="X TKJ 2">X TKJ 2</option>
+                            <option value="X TBSM 1">X TBSM 1</option>
+                            <option value="X TBSM 2">X TBSM 2</option>
+                            <option value="X DKV 1">X DKV 1</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">📋 Bagian A – Pilihan Ganda (10 Soal, 10 poin/soal)</h3>
+                
+                <div class="question-block">
+                    <p class="question-text">1. Bangunan megalitikum yang berbentuk tiang atau tugu batu tunggal sebagai tempat pemujaan roh nenek moyang disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> a. Menhir</label>
+                        <label><input type="radio" name="q1" value="b"> b. Dolmen</label>
+                        <label><input type="radio" name="q1" value="c"> c. Sarkofagus</label>
+                        <label><input type="radio" name="q1" value="d"> d. Waruga</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Nekara dan Moko adalah hasil kebudayaan perundagian yang berbentuk...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> a. Kapak perunggu berpinggang</label>
+                        <label><input type="radio" name="q2" value="b"> b. Gendang perunggu untuk upacara</label>
+                        <label><input type="radio" name="q2" value="c"> c. Perhiasan dari batu manik-manik</label>
+                        <label><input type="radio" name="q2" value="d"> d. Bejana tempat penyimpanan air</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Menurut Jan Harold Brunvand, cerita yang dianggap benar-benar terjadi oleh empunya cerita dan berkaitan dengan dewa atau penciptaan alam disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> a. Legenda</label>
+                        <label><input type="radio" name="q3" value="b"> b. Dongeng</label>
+                        <label><input type="radio" name="q3" value="c"> c. Mite (Mitos)</label>
+                        <label><input type="radio" name="q3" value="d"> d. Fabel</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Bangunan megalitikum yang dianggap sebagai cikal bakal bentuk candi di Indonesia adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="a"> a. Dolmen</label>
+                        <label><input type="radio" name="q4" value="b"> b. Punden berundak</label>
+                        <label><input type="radio" name="q4" value="c"> c. Sarkofagus</label>
+                        <label><input type="radio" name="q4" value="d"> d. Kubur batu</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Fungsi tradisi lisan sebagai "alat pengesahan" berarti...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="a"> a. Memberikan hiburan bagi masyarakat</label>
+                        <label><input type="radio" name="q5" value="b"> b. Melegitimasi pranata sosial, lembaga adat, dan kekuasaan</label>
+                        <label><input type="radio" name="q5" value="c"> c. Menanamkan nilai-nilai moral kepada anak-anak</label>
+                        <label><input type="radio" name="q5" value="d"> d. Mencerminkan harapan dan cita-cita masyarakat</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">6. Peti kubur batu yang terbuat dari satu bongkah batu utuh (biasanya ditemukan di Bali) disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> a. Waruga</label>
+                        <label><input type="radio" name="q6" value="b"> b. Dolmen</label>
+                        <label><input type="radio" name="q6" value="c"> c. Sarkofagus</label>
+                        <label><input type="radio" name="q6" value="d"> d. Punden berundak</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">7. Istilah "undagi" dalam masyarakat perundagian merujuk pada...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="a"> a. Pemimpin suku atau kepala adat</label>
+                        <label><input type="radio" name="q7" value="b"> b. Orang yang memiliki keahlian khusus (pengrajin logam, pembuat perahu)</label>
+                        <label><input type="radio" name="q7" value="c"> c. Roh nenek moyang yang disembah</label>
+                        <label><input type="radio" name="q7" value="d"> d. Upacara penguburan mayat</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">8. Legenda berbeda dengan mite karena legenda...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> a. Berkaitan dengan dewa-dewi pencipta alam</label>
+                        <label><input type="radio" name="q8" value="b"> b. Dianggap tidak pernah terjadi sama sekali</label>
+                        <label><input type="radio" name="q8" value="c"> c. Berkaitan dengan tokoh sejarah atau tempat tertentu yang dianggap pernah ada</label>
+                        <label><input type="radio" name="q8" value="d"> d. Hanya diceritakan oleh anak-anak</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">9. Salah satu cara siswa SMK dapat melestarikan tradisi lisan di era modern adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="a"> a. Melupakan cerita rakyat karena tidak ilmiah</label>
+                        <label><input type="radio" name="q9" value="b"> b. Mendokumentasikan dan mendigitalisasi cerita rakyat melalui media kreatif</label>
+                        <label><input type="radio" name="q9" value="c"> c. Mengganti semua tradisi lisan dengan budaya asing</label>
+                        <label><input type="radio" name="q9" value="d"> d. Menganggap tradisi lisan sebagai hal yang memalukan</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">10. Kapak corong pada masa perundagian lebih banyak berfungsi sebagai...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> a. Alat bertani sehari-hari</label>
+                        <label><input type="radio" name="q10" value="b"> b. Senjata perang utama</label>
+                        <label><input type="radio" name="q10" value="c"> c. Alat upacara atau simbol status sosial</label>
+                        <label><input type="radio" name="q10" value="d"> d. Alat untuk memotong kayu bakar</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">✍️ Bagian B – Essay (Penilaian Mandiri)</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-gray);">
+                    <em>Jawablah pertanyaan di bawah ini pada kertas atau kolom catatan Anda, lalu centang kotak di bawah jika jawaban Anda sudah memuat konsep kunci yang disebutkan. Setiap centang bernilai 5 poin (Total 20 poin/soal).</em>
+                </p>
+
+                <div class="question-block">
+                    <p class="question-text">1. Jelaskan perbedaan antara Menhir, Dolmen, Sarkofagus, dan Punden Berundak beserta fungsinya masing-masing!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Menhir: tugu batu tunggal untuk pemujaan.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Dolmen: meja batu untuk tempat sesaji/mayat.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Sarkofagus: peti batu utuh untuk penguburan.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Punden berundak: bangunan bertingkat, cikal bakal candi.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Uraikan tiga jenis tradisi lisan (mite, legenda, dongeng) dan berikan masing-masing satu contoh yang Anda ketahui!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Mite: cerita dewa/penciptaan, dianggap benar (contoh: Nyi Roro Kidul).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Legenda: berkaitan dengan tokoh/tempat sejarah (contoh: Sangkuriang).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Dongeng: cerita fiksi untuk hiburan/moral (contoh: Kancil).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Memberikan contoh yang relevan dan tepat untuk masing-masing jenis.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Analisislah fungsi tradisi lisan sebagai "alat pendidikan" dan "alat pengawas" dalam masyarakat praaksara!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Alat pendidikan: menanamkan nilai moral, etika, dan norma pada generasi muda.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Alat pengawas: menjaga kepatuhan terhadap norma melalui cerita peringatan/hukuman.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Menjelaskan mekanisme pewarisannya (dari tetua ke generasi muda).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Memberikan contoh konkret (misal: cerita akibat melanggar pantangan).</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Mengapa masyarakat perundagian dianggap lebih kompleks dibandingkan masyarakat bercocok tanam (neolitikum)?</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Adanya pembagian kerja berdasarkan keahlian (undagi).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Penguasaan teknologi logam (perunggu dan besi).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Sistem perdagangan dan pertukaran barang yang lebih luas.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Stratifikasi sosial yang lebih terlihat (pemilik barang logam vs bukan).</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Bagaimana peran siswa SMK dalam melestarikan warisan budaya praaksara (benda dan tradisi lisan) di era digital saat ini?</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Mendigitalisasi arsip (misal: merekam cerita tetua adat dalam format audio/video).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Membuat konten kreatif (desain, video, website) yang mempromosikan budaya lokal.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Mengintegrasikan kearifan lokal ke dalam produk atau proyek kejuruan.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Menyadari bahwa teknologi adalah alat pelestarian, bukan penghancur budaya.</label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                </div>
+
+                <!-- Result Box -->
+                <div class="result-box" id="resultBox">
+                    <h3 style="color: var(--primary-gold); margin-bottom: 1rem;">📊 Hasil Uji Formatif 5</h3>
+                    <div class="score-display" id="totalScore">0</div>
+                    <p style="margin: 1rem 0; font-size: 1.1rem;">
+                        Bagian A (PG): <span id="scorePG" style="color: var(--primary-gold); font-weight: 700;">0</span>/100 | 
+                        Bagian B (Essay): <span id="scoreEssay" style="color: var(--primary-gold); font-weight: 700;">0</span>/100
+                    </p>
+                    <p id="feedbackText" style="margin-bottom: 1.5rem; font-style: italic;"></p>
+                    
+                    <div class="action-buttons">
+                        <button type="button" class="btn-action btn-pdf" onclick="unduhPDF()">📥 UNDUH PDF LENGKAP</button>
+                        <button type="button" class="btn-action btn-email" onclick="kirimEmail()">✉️ KIRIM EMAIL KE GURU</button>
+                        <button type="button" class="btn-action btn-reset" onclick="mulaiUlang()">🔄 MULAI ULANG</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Kunci Jawaban PG Pertemuan 5
+        const kunciPG = {
+            q1: 'a', q2: 'b', q3: 'c', q4: 'b', q5: 'b',
+            q6: 'c', q7: 'b', q8: 'c', q9: 'b', q10: 'c'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+            const warningMsg = document.getElementById('warningMsg');
+
+            // Validasi Data
+            if (!nama || !nis || !tanggal || !kelas) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua Data Siswa terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            // Validasi PG (harus dijawab semua)
+            let allPGAnswered = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    allPGAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allPGAnswered) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            warningMsg.style.display = 'none';
+
+            // Hitung Skor PG
+            let skorPG = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (selected === kunciPG[`q${i}`]) {
+                    skorPG += 10;
+                }
+            }
+
+            // Hitung Skor Essay (Self-Assessment)
+            let skorEssay = 0;
+            const essayChecks = document.querySelectorAll('.essay-check:checked');
+            skorEssay = essayChecks.length * 5; // 5 poin per checklist (20 checklist total x 5 = 100)
+
+            // Total Skor
+            const totalSkor = skorPG + skorEssay;
+
+            // Tampilkan Hasil
+            document.getElementById('scorePG').textContent = skorPG;
+            document.getElementById('scoreEssay').textContent = skorEssay;
+            document.getElementById('totalScore').textContent = totalSkor;
+            
+            const feedback = document.getElementById('feedbackText');
+            if (totalSkor >= 85) {
+                feedback.textContent = '🌟 Luar biasa! Pemahaman Anda tentang kebudayaan praaksara dan tradisi lisan sangat mendalam.';
+            } else if (totalSkor >= 70) {
+                feedback.textContent = '👍 Bagus! Anda memahami konsep dasar, namun perlu pendalaman pada detail jenis bangunan megalitikum atau fungsi folklor.';
+            } else {
+                feedback.textContent = '📚 Perlu belajar lagi. Silakan baca ulang materi tentang perbedaan mite, legenda, dongeng, dan ciri-ciri budaya megalitikum.';
+            }
+
+            document.getElementById('resultBox').classList.add('show');
+            
+            // Disable form setelah submit
+            const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+            inputs.forEach(input => input.disabled = true);
+            
+            window.scrollTo({ top: document.getElementById('resultBox').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function unduhPDF() {
+            const element = document.getElementById('uji-formatif');
+            const nama = document.getElementById('nama').value;
+            const opt = {
+                margin: 10,
+                filename: `Uji_Formatif_5_Kebudayaan_Praaksara_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const skorPG = document.getElementById('scorePG').textContent;
+            const skorEssay = document.getElementById('scoreEssay').textContent;
+            const total = document.getElementById('totalScore').textContent;
+
+            const subject = `Hasil Uji Formatif 5 (Kebudayaan Praaksara) - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Hafiza, S.Pd,\n\nBerikut adalah hasil Uji Formatif 5 saya:\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\n\nSkor Pilihan Ganda: ${skorPG}/100\nSkor Essay (Self-Assessment): ${skorEssay}/100\nTotal Skor: ${total}/200\n\nTerima kasih.`;
+            
+            window.location.href = `mailto:hafizafizalubi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function mulaiUlang() {
+            if (confirm('Apakah Anda yakin ingin mengulang uji formatif? Semua jawaban akan dihapus.')) {
+                document.getElementById('formatifForm').reset();
+                document.getElementById('resultBox').classList.remove('show');
+                
+                const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+                inputs.forEach(input => input.disabled = false);
+                
+                document.getElementById('warningMsg').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

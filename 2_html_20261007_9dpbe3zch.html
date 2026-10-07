@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 2: Berpikir Historis - Sejarah Kelas X SMK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-gold: #B8941F;
+            --cream: #F5F0E6;
+            --dark: #1A1A1A;
+            --text-gray: #4A4A4A;
+            --white: #FFFFFF;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f0e6 0%, #e8e0d0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        .navbar {
+            background: var(--dark);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        /* Hero Chapter */
+        .chapter-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .chapter-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
+        }
+        .chapter-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .chapter-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .chapter-objective {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            position: relative;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-outline {
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+        .btn-outline:hover { background: var(--primary-gold); color: var(--dark); }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: var(--white);
+            margin-top: -2rem;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Typography & Components */
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--dark);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-gold);
+            display: inline-block;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-left: 4px solid var(--primary-gold);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .case-study {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .case-study h4 { color: var(--dark-gold); margin-bottom: 0.5rem; }
+        .reflection {
+            background: var(--dark);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .reflection h4 { color: var(--primary-gold); margin-bottom: 0.5rem; }
+
+        /* Tables */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .styled-table th {
+            background: var(--dark);
+            color: var(--primary-gold);
+            padding: 1rem;
+            text-align: left;
+            font-family: 'Playfair Display', serif;
+        }
+        .styled-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .styled-table tr:hover { background: var(--cream); }
+
+        /* Video Placeholder */
+        .video-placeholder {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            margin: 1.5rem 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        .video-placeholder span { font-size: 3rem; margin-bottom: 0.5rem; }
+
+        /* Formative Test Styles */
+        .test-section {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+            border: 2px solid var(--primary-gold);
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+        .question-block {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #eee;
+        }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .options label {
+            display: block;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 0.75rem; }
+        
+        .essay-checklist {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+        }
+        .essay-checklist label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .essay-checklist input[type="checkbox"] {
+            margin-top: 0.25rem;
+            accent-color: var(--primary-gold);
+        }
+
+        .result-box {
+            background: var(--dark);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+        .result-box.show { display: block; animation: fadeIn 0.5s; }
+        .score-display {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-action {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-submit { background: var(--primary-gold); color: var(--dark); }
+        .btn-pdf { background: var(--dark); color: var(--primary-gold); border: 1px solid var(--primary-gold); }
+        .btn-email { background: #2563eb; color: white; }
+        .btn-reset { background: var(--error); color: white; }
+        .btn-action:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .warning-text {
+            color: var(--error);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .chapter-hero h1 { font-size: 1.75rem; }
+            .container { padding: 2rem 1rem; }
+            .action-buttons { flex-direction: column; }
+            .btn-action { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Sejarah Kelas X</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li><a href="index.html#bab">Daftar Bab</a></li>
+                <li><a href="index.html#kontak">Penulis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <section class="chapter-hero">
+        <span class="chapter-badge">Pertemuan 2</span>
+        <h1>Berpikir Historis</h1>
+        <p class="chapter-objective">
+            Memahami cara berpikir kronologis, diakronik, dan sinkronik dalam mempelajari sejarah, 
+            serta konsep perubahan dan keberlanjutan untuk membangun analisis sejarah yang kritis dan terhindar dari anakronisme.
+        </p>
+        <div class="chapter-nav">
+            <a href="1.html" class="btn btn-outline">← Pertemuan 1</a>
+            <a href="#mulai-baca" class="btn btn-primary">Mulai Membaca</a>
+            <a href="3.html" class="btn btn-outline">Pertemuan 3 →</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container" id="mulai-baca">
+        
+        <h2 class="section-title">Pendahuluan</h2>
+        <p>
+            Sejarah bukan sekadar hafalan tahun dan nama tokoh, melainkan sebuah cara berpikir (historical thinking). 
+            Berpikir historis adalah kemampuan untuk memahami masa lalu dalam konteks zamannya sendiri, 
+            bukan menilai masa lalu dengan standar masa kini. Pendekatan ini melibatkan pemahaman tentang 
+            urutan waktu (kronologis), proses yang memanjang (diakronik), kondisi pada waktu tertentu (sinkronik), 
+            serta dinamika perubahan dan keberlanjutan.
+        </p>
+        <p style="margin-top: 1rem;">
+            Tanpa berpikir historis, seseorang rentan terjebak dalam <strong>anakronisme</strong>, yaitu kesalahan 
+            menempatkan peristiwa, tokoh, atau objek pada zaman yang tidak sesuai. Misalnya, menggambarkan 
+            pahlawan abad ke-19 menggunakan teknologi abad ke-21. Pemahaman yang baik tentang konsep-konsep 
+            ini akan membekali siswa dengan kemampuan analisis yang tajam dan objektif.
+        </p>
+
+        <div class="highlight-box">
+            <h3>🔑 Konsep Kunci</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><strong>Berpikir Historis:</strong> Cara berpikir yang menempatkan peristiwa masa lalu dalam konteks ruang dan waktunya sendiri.</li>
+                <li><strong>Kronologis:</strong> Urutan waktu terjadinya peristiwa sejarah secara beruntut dari awal hingga akhir.</li>
+                <li><strong>Diakronik:</strong> Memanjang dalam waktu, menyempit dalam ruang (fokus pada proses dan urutan).</li>
+                <li><strong>Sinkronik:</strong> Melebar dalam ruang, menyempit dalam waktu (fokus pada struktur dan kondisi pada saat tertentu).</li>
+                <li><strong>Perubahan & Keberlanjutan:</strong> Dinamika apa yang berubah dan apa yang tetap bertahan dari masa lalu ke masa kini.</li>
+            </ul>
+        </div>
+
+        <div class="case-study">
+            <h4>📖 Studi Kasus 1: Jebakan Anakronisme dalam Film Sejarah</h4>
+            <p>
+                Sebuah film bertemakan perjuangan kemerdekaan Indonesia tahun 1945 menampilkan adegan di mana 
+                seorang pejuang menggunakan jam tangan digital dan sepatu kets modern. Bagi sejarawan, ini adalah 
+                bentuk anakronisme yang fatal karena merusak keaslian konteks zaman (zeitgeist). 
+            </p>
+            <p style="margin-top: 1rem; font-weight: 600; color: var(--dark-gold);">
+                Pembelajaran: Berpikir historis menuntut kita untuk selalu memverifikasi konteks zaman (temporal) 
+                dan tempat (spasial) dari setiap bukti atau narasi sejarah.
+            </p>
+        </div>
+
+        <div class="reflection">
+            <h4>💭 Refleksi untuk Siswa SMK</h4>
+            <p>
+                Sebagai siswa SMK, berpikir historis sangat relevan. Misalnya, dalam jurusan Teknik Komputer dan Jaringan (TKJ), 
+                memahami "perubahan" teknologi dari mesin ketik ke komputer, dan "keberlanjutan" prinsip dasar komunikasi data, 
+                membantu Anda tidak hanya menjadi operator, tetapi juga inovator yang memahami akar perkembangan profesinya.
+            </p>
+        </div>
+
+        <h2 class="section-title">2.1 Landasan Teoretis Berpikir Historis</h2>
+        <p>
+            Konsep berpikir historis di Indonesia banyak dipengaruhi oleh pemikiran sejarawan seperti Kuntowijoyo 
+            dan Sartono Kartodirdjo, yang menekankan pentingnya metodologi dalam memahami masa lalu.
+        </p>
+        
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Konsep</th>
+                    <th>Ciri Utama</th>
+                    <th>Fokus Kajian</th>
+                    <th>Contoh Penerapan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Diakronik</strong></td>
+                    <td>Memanjang dalam waktu, menyempit dalam ruang.</td>
+                    <td>Proses, urutan, kronologi, perkembangan.</td>
+                    <td>Perkembangan sistem pemerintahan di Indonesia dari 1945 hingga sekarang.</td>
+                </tr>
+                <tr>
+                    <td><strong>Sinkronik</strong></td>
+                    <td>Melebar dalam ruang, menyempit dalam waktu.</td>
+                    <td>Struktur, kondisi, fenomena pada satu waktu tertentu.</td>
+                    <td>Kondisi sosial-ekonomi masyarakat Indonesia pada tahun 1930-an.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">2.1.1 Konsep Perubahan (Change) dan Keberlanjutan (Continuity)</h3>
+        <p>
+            Sejarah tidak pernah statis. Terdapat dua kekuatan yang selalu bekerja:
+        </p>
+        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+            <li style="margin-bottom: 0.75rem;"><strong>Perubahan:</strong> Transformasi mendasar dalam struktur masyarakat, politik, atau teknologi. Contoh: Perubahan dari masyarakat agraris ke industri.</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Keberlanjutan:</strong> Unsur-unsur masa lalu yang masih dipertahankan atau diteruskan hingga masa kini. Contoh: Tradisi gotong royong yang masih ada di desa-desa Indonesia meskipun telah terjadi modernisasi.</li>
+        </ul>
+
+        <div class="video-placeholder">
+            <span>▶</span>
+            <p>Video: Diakronik vs Sinkronik dalam Analisis Sejarah</p>
+            <small>Sumber: Kanal Pendidikan Sejarah / Youtube</small>
+        </div>
+
+        <h2 class="section-title">2.2 Prinsip-Prinsip Berpikir Historis</h2>
+        <div class="highlight-box">
+            <ol style="margin-left: 1.5rem;">
+                <li><strong>Empati Historis:</strong> Mencoba memahami tindakan tokoh masa lalu berdasarkan nilai dan norma zaman mereka, bukan dihakimi dengan nilai masa kini.</li>
+                <li><strong>Kontekstualisasi:</strong> Menempatkan peristiwa dalam latar belakang waktu, tempat, dan budaya yang spesifik.</li>
+                <li><strong>Sebab-Akibat (Kausalitas):</strong> Memahami bahwa setiap peristiwa sejarah memiliki latar belakang (sebab) dan dampak (akibat), tidak terjadi secara kebetulan.</li>
+                <li><strong>Menghindari Anakronisme:</strong> Ketelitian dalam memastikan kecocokan waktu antara objek/peristiwa dengan zamannya.</li>
+            </ol>
+        </div>
+
+        <h2 class="section-title">Kesimpulan</h2>
+        <p>
+            Berpikir historis adalah fondasi metodologis dalam mempelajari sejarah. Dengan menguasai konsep 
+            kronologis, diakronik, dan sinkronik, siswa dapat menganalisis peristiwa secara sistematis. 
+            Pemahaman tentang perubahan dan keberlanjutan juga membantu kita melihat benang merah antara 
+            masa lalu, masa kini, dan masa depan. Sejarah bukan hanya tentang apa yang berubah, tetapi juga 
+            tentang apa yang tetap bertahan di tengah arus zaman.
+        </p>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">📚 Daftar Pustaka</h3>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; font-size: 0.95rem; color: var(--text-gray);">
+            <li>Kuntowijoyo. (2013). <em>Pengantar Ilmu Sejarah</em>. Yogyakarta: Bentang Pustaka.</li>
+            <li>Sartono Kartodirdjo. (1992). <em>Pendekatan Ilmu Sosial dalam Metodologi Sejarah</em>. Jakarta: Gramedia.</li>
+            <li>Supriadi. (2024). <em>Sejarah Kelas X SMK Kurikulum Merdeka</em>. Bukittinggi: FTIK UIN Bukittinggi.</li>
+            <li>Wineburg, S. (2001). <em>Historical Thinking and Other Unnatural Acts</em>. Philadelphia: Temple University Press.</li>
+        </ul>
+
+        <div style="margin-top: 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <a href="1.html" class="btn btn-outline">← Kembali ke Pertemuan 1</a>
+            <a href="#uji-formatif" class="btn btn-primary">Lanjut ke Uji Formatif ↓</a>
+        </div>
+
+        <!-- Formative Test Section -->
+        <div class="test-section" id="uji-formatif">
+            <div class="test-header">
+                <h2>📋 Uji Formatif 2: Berpikir Historis</h2>
+                <p>Materi: Konsep kronologis, diakronik, sinkronik, perubahan, keberlanjutan, dan anakronisme.</p>
+                <p class="warning-text" id="warningMsg">⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu!</p>
+            </div>
+
+            <form id="formatifForm">
+                <h3 style="margin-bottom: 1.5rem; color: var(--dark-gold);">📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label>* Nama Lengkap</label>
+                        <input type="text" id="nama" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* NIS</label>
+                        <input type="text" id="nis" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Tanggal Ujian</label>
+                        <input type="date" id="tanggal" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Kelas</label>
+                        <select id="kelas" class="form-control" required>
+                            <option value="">Pilih Kelas</option>
+                            <option value="X TKJ 1">X TKJ 1</option>
+                            <option value="X TKJ 2">X TKJ 2</option>
+                            <option value="X TBSM 1">X TBSM 1</option>
+                            <option value="X TBSM 2">X TBSM 2</option>
+                            <option value="X DKV 1">X DKV 1</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">📋 Bagian A – Pilihan Ganda (10 Soal, 10 poin/soal)</h3>
+                
+                <div class="question-block">
+                    <p class="question-text">1. Cara berpikir yang menempatkan peristiwa sejarah sesuai dengan urutan waktu terjadinya disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> a. Kronologis</label>
+                        <label><input type="radio" name="q1" value="b"> b. Sinkronik</label>
+                        <label><input type="radio" name="q1" value="c"> c. Anakronisme</label>
+                        <label><input type="radio" name="q1" value="d"> d. Historiografi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Ciri utama dari konsep berpikir diakronik adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> a. Melebar dalam ruang, menyempit dalam waktu</label>
+                        <label><input type="radio" name="q2" value="b"> b. Memanjang dalam waktu, menyempit dalam ruang</label>
+                        <label><input type="radio" name="q2" value="c"> c. Fokus pada struktur sosial pada satu masa</label>
+                        <label><input type="radio" name="q2" value="d"> d. Tidak memperhatikan urutan waktu</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Kajian tentang kondisi sosial, ekonomi, dan politik Indonesia pada tahun 1930-an merupakan contoh pendekatan...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> a. Diakronik</label>
+                        <label><input type="radio" name="q3" value="b"> b. Kronologis</label>
+                        <label><input type="radio" name="q3" value="c"> c. Sinkronik</label>
+                        <label><input type="radio" name="q3" value="d"> d. Periodisasi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Kesalahan dalam menempatkan peristiwa, tokoh, atau objek pada zaman yang tidak sesuai dengan kenyataan disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="a"> a. Historiografi</label>
+                        <label><input type="radio" name="q4" value="b"> b. Anakronisme</label>
+                        <label><input type="radio" name="q4" value="c"> c. Verifikasi</label>
+                        <label><input type="radio" name="q4" value="d"> d. Interpretasi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Unsur masa lalu yang masih dipertahankan atau diteruskan hingga masa kini dalam konsep sejarah disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="a"> a. Perubahan (Change)</label>
+                        <label><input type="radio" name="q5" value="b"> b. Keberlanjutan (Continuity)</label>
+                        <label><input type="radio" name="q5" value="c"> c. Revolusi</label>
+                        <label><input type="radio" name="q5" value="d"> d. Disrupsi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">6. Tokoh sejarawan Indonesia yang sangat populer mempopulerkan konsep diakronik dan sinkronik adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> a. R. Moh. Ali</label>
+                        <label><input type="radio" name="q6" value="b"> b. Kuntowijoyo</label>
+                        <label><input type="radio" name="q6" value="c"> c. Herodotus</label>
+                        <label><input type="radio" name="q6" value="d"> d. Ibnu Khaldun</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">7. Berikut ini yang merupakan contoh peristiwa yang paling tepat dikaji dengan pendekatan diakronik adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="a"> a. Struktur pemerintahan Kerajaan Majapahit pada abad ke-14</label>
+                        <label><input type="radio" name="q7" value="b"> b. Kondisi ekonomi masyarakat desa di Jawa tahun 1920</label>
+                        <label><input type="radio" name="q7" value="c"> c. Perkembangan pergerakan nasional Indonesia dari 1908 hingga 1945</label>
+                        <label><input type="radio" name="q7" value="d"> d. Kehidupan sehari-hari masyarakat Bali pada masa praaksara</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">8. Prinsip berpikir historis yang berusaha memahami tindakan tokoh masa lalu berdasarkan nilai dan norma zamannya disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> a. Empati historis</label>
+                        <label><input type="radio" name="q8" value="b"> b. Subjektivitas mutlak</label>
+                        <label><input type="radio" name="q8" value="c"> c. Generalisasi</label>
+                        <label><input type="radio" name="q8" value="d"> d. Fiksi sejarah</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">9. Dampak utama jika seorang peneliti sejarah mengabaikan urutan kronologis adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="a"> a. Analisis menjadi lebih mendalam</label>
+                        <label><input type="radio" name="q9" value="b"> b. Terjadinya kekeliruan dalam menentukan hubungan sebab-akibat</label>
+                        <label><input type="radio" name="q9" value="c"> c. Sejarah menjadi lebih menarik untuk dibaca</label>
+                        <label><input type="radio" name="q9" value="d"> d. Tidak ada dampak yang signifikan</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">10. Tradisi "gotong royong" yang masih dipraktikkan di masyarakat Indonesia modern meskipun telah terjadi modernisasi adalah contoh dari konsep...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> a. Perubahan radikal</label>
+                        <label><input type="radio" name="q10" value="b"> b. Anakronisme</label>
+                        <label><input type="radio" name="q10" value="c"> c. Keberlanjutan (Continuity)</label>
+                        <label><input type="radio" name="q10" value="d"> d. Sinkronisme</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">✍️ Bagian B – Essay (Penilaian Mandiri)</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-gray);">
+                    <em>Jawablah pertanyaan di bawah ini pada kertas atau kolom catatan Anda, lalu centang kotak di bawah jika jawaban Anda sudah memuat konsep kunci yang disebutkan. Setiap centang bernilai 5 poin (Total 20 poin/soal).</em>
+                </p>
+
+                <div class="question-block">
+                    <p class="question-text">1. Jelaskan perbedaan mendasar antara berpikir diakronik dan sinkronik, serta berikan masing-masing satu contoh konkret!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Diakronik: memanjang dalam waktu, menyempit dalam ruang (fokus proses).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Sinkronik: melebar dalam ruang, menyempit dalam waktu (fokus struktur/kondisi).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Contoh diakronik yang tepat (misal: kronologi perjuangan kemerdekaan).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Contoh sinkronik yang tepat (misal: kondisi sosial politik tahun 1945).</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Apa yang dimaksud dengan anakronisme dalam sejarah? Berikan contoh dan jelaskan cara menghindarinya!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Definisi: kesalahan menempatkan objek/peristiwa pada zaman yang tidak sesuai.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Contoh yang relevan (misal: teknologi modern di masa lalu).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Cara menghindari: verifikasi sumber dan kontekstualisasi zaman.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Penekanan pada pentingnya empati historis.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Analisislah peristiwa Proklamasi Kemerdekaan 17 Agustus 1945 menggunakan pendekatan sinkronik!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Fokus pada kondisi/struktur pada waktu tertentu (Agustus 1945).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Menyebutkan aspek politik (kekosongan kekuasaan/vacuum of power).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Menyebutkan aspek sosial (keinginan rakyat yang mendesak).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Menyebutkan aspek internasional (kalahnya Jepang dalam PD II).</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Jelaskan konsep perubahan (change) dan keberlanjutan (continuity) dalam sejarah, serta berikan contohnya!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Perubahan: transformasi mendasar (misal: sistem pemerintahan, teknologi).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Keberlanjutan: unsur yang bertahan (misal: nilai budaya, tradisi).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Contoh perubahan yang spesifik dan jelas.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Contoh keberlanjutan yang spesifik dan jelas.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Mengapa berpikir kronologis sangat penting dalam merekonstruksi peristiwa sejarah? Jelaskan dampaknya jika diabaikan!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Kronologis memastikan urutan kejadian yang logis dan sistematis.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Penting untuk memahami hubungan sebab-akibat (kausalitas).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Dampak jika diabaikan: kebingungan, kesimpulan yang salah, anakronisme.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Menyimpulkan bahwa kronologi adalah kerangka dasar sejarah.</label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                </div>
+
+                <!-- Result Box -->
+                <div class="result-box" id="resultBox">
+                    <h3 style="color: var(--primary-gold); margin-bottom: 1rem;">📊 Hasil Uji Formatif 2</h3>
+                    <div class="score-display" id="totalScore">0</div>
+                    <p style="margin: 1rem 0; font-size: 1.1rem;">
+                        Bagian A (PG): <span id="scorePG" style="color: var(--primary-gold); font-weight: 700;">0</span>/100 | 
+                        Bagian B (Essay): <span id="scoreEssay" style="color: var(--primary-gold); font-weight: 700;">0</span>/100
+                    </p>
+                    <p id="feedbackText" style="margin-bottom: 1.5rem; font-style: italic;"></p>
+                    
+                    <div class="action-buttons">
+                        <button type="button" class="btn-action btn-pdf" onclick="unduhPDF()">📥 UNDUH PDF LENGKAP</button>
+                        <button type="button" class="btn-action btn-email" onclick="kirimEmail()">✉️ KIRIM EMAIL KE GURU</button>
+                        <button type="button" class="btn-action btn-reset" onclick="mulaiUlang()">🔄 MULAI ULANG</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Kunci Jawaban PG Pertemuan 2
+        const kunciPG = {
+            q1: 'a', q2: 'b', q3: 'c', q4: 'b', q5: 'b',
+            q6: 'b', q7: 'c', q8: 'a', q9: 'b', q10: 'c'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+            const warningMsg = document.getElementById('warningMsg');
+
+            // Validasi Data
+            if (!nama || !nis || !tanggal || !kelas) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua Data Siswa terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            // Validasi PG (harus dijawab semua)
+            let allPGAnswered = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    allPGAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allPGAnswered) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            warningMsg.style.display = 'none';
+
+            // Hitung Skor PG
+            let skorPG = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (selected === kunciPG[`q${i}`]) {
+                    skorPG += 10;
+                }
+            }
+
+            // Hitung Skor Essay (Self-Assessment)
+            let skorEssay = 0;
+            const essayChecks = document.querySelectorAll('.essay-check:checked');
+            skorEssay = essayChecks.length * 5; // 5 poin per checklist (20 checklist total x 5 = 100)
+
+            // Total Skor
+            const totalSkor = skorPG + skorEssay;
+
+            // Tampilkan Hasil
+            document.getElementById('scorePG').textContent = skorPG;
+            document.getElementById('scoreEssay').textContent = skorEssay;
+            document.getElementById('totalScore').textContent = totalSkor;
+            
+            const feedback = document.getElementById('feedbackText');
+            if (totalSkor >= 85) {
+                feedback.textContent = '🌟 Luar biasa! Pemahaman Anda tentang berpikir historis sangat baik dan analitis.';
+            } else if (totalSkor >= 70) {
+                feedback.textContent = '👍 Bagus! Anda memahami konsep dasar, namun perlu pendalaman pada perbedaan diakronik-sinkronik atau konsep perubahan.';
+            } else {
+                feedback.textContent = '📚 Perlu belajar lagi. Silakan baca ulang materi tentang konsep waktu, ruang, dan hindari jebakan anakronisme.';
+            }
+
+            document.getElementById('resultBox').classList.add('show');
+            
+            // Disable form setelah submit
+            const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+            inputs.forEach(input => input.disabled = true);
+            
+            window.scrollTo({ top: document.getElementById('resultBox').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function unduhPDF() {
+            const element = document.getElementById('uji-formatif');
+            const nama = document.getElementById('nama').value;
+            const opt = {
+                margin: 10,
+                filename: `Uji_Formatif_2_Berpikir_Historis_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const skorPG = document.getElementById('scorePG').textContent;
+            const skorEssay = document.getElementById('scoreEssay').textContent;
+            const total = document.getElementById('totalScore').textContent;
+
+            const subject = `Hasil Uji Formatif 2 (Berpikir Historis) - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Hafiza, S.Pd,\n\nBerikut adalah hasil Uji Formatif 2 saya:\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\n\nSkor Pilihan Ganda: ${skorPG}/100\nSkor Essay (Self-Assessment): ${skorEssay}/100\nTotal Skor: ${total}/200\n\nTerima kasih.`;
+            
+            window.location.href = `mailto:hafizafizalubi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function mulaiUlang() {
+            if (confirm('Apakah Anda yakin ingin mengulang uji formatif? Semua jawaban akan dihapus.')) {
+                document.getElementById('formatifForm').reset();
+                document.getElementById('resultBox').classList.remove('show');
+                
+                const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+                inputs.forEach(input => input.disabled = false);
+                
+                document.getElementById('warningMsg').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

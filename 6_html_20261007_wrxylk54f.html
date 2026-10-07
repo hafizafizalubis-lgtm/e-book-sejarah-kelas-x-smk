@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 6: Hindu-Buddha di Nusantara - Sejarah Kelas X SMK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-gold: #B8941F;
+            --cream: #F5F0E6;
+            --dark: #1A1A1A;
+            --text-gray: #4A4A4A;
+            --white: #FFFFFF;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f0e6 0%, #e8e0d0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        .navbar {
+            background: var(--dark);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        /* Hero Chapter */
+        .chapter-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .chapter-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
+        }
+        .chapter-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .chapter-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .chapter-objective {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            position: relative;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-outline {
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+        .btn-outline:hover { background: var(--primary-gold); color: var(--dark); }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: var(--white);
+            margin-top: -2rem;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Typography & Components */
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--dark);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-gold);
+            display: inline-block;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-left: 4px solid var(--primary-gold);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .case-study {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .case-study h4 { color: var(--dark-gold); margin-bottom: 0.5rem; }
+        .reflection {
+            background: var(--dark);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .reflection h4 { color: var(--primary-gold); margin-bottom: 0.5rem; }
+
+        /* Tables */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .styled-table th {
+            background: var(--dark);
+            color: var(--primary-gold);
+            padding: 1rem;
+            text-align: left;
+            font-family: 'Playfair Display', serif;
+        }
+        .styled-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .styled-table tr:hover { background: var(--cream); }
+
+        /* Video Placeholder */
+        .video-placeholder {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            margin: 1.5rem 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        .video-placeholder span { font-size: 3rem; margin-bottom: 0.5rem; }
+
+        /* Formative Test Styles */
+        .test-section {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+            border: 2px solid var(--primary-gold);
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+        .question-block {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #eee;
+        }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .options label {
+            display: block;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 0.75rem; }
+        
+        .essay-checklist {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+        }
+        .essay-checklist label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .essay-checklist input[type="checkbox"] {
+            margin-top: 0.25rem;
+            accent-color: var(--primary-gold);
+        }
+
+        .result-box {
+            background: var(--dark);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+        .result-box.show { display: block; animation: fadeIn 0.5s; }
+        .score-display {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-action {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-submit { background: var(--primary-gold); color: var(--dark); }
+        .btn-pdf { background: var(--dark); color: var(--primary-gold); border: 1px solid var(--primary-gold); }
+        .btn-email { background: #2563eb; color: white; }
+        .btn-reset { background: var(--error); color: white; }
+        .btn-action:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .warning-text {
+            color: var(--error);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .chapter-hero h1 { font-size: 1.75rem; }
+            .container { padding: 2rem 1rem; }
+            .action-buttons { flex-direction: column; }
+            .btn-action { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Sejarah Kelas X</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li><a href="index.html#bab">Daftar Bab</a></li>
+                <li><a href="index.html#kontak">Penulis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <section class="chapter-hero">
+        <span class="chapter-badge">Pertemuan 6</span>
+        <h1>Hindu-Buddha di Nusantara</h1>
+        <p class="chapter-objective">
+            Memahami sejarah agama Hindu dan Buddha, serta menganalisis teori-teori masuknya 
+            kebudayaan Hindu-Buddha ke Indonesia beserta bukti-bukti pengaruhnya dalam kehidupan masyarakat.
+        </p>
+        <div class="chapter-nav">
+            <a href="5.html" class="btn btn-outline">← Pertemuan 5</a>
+            <a href="#mulai-baca" class="btn btn-primary">Mulai Membaca</a>
+            <a href="7.html" class="btn btn-outline">Pertemuan 7 →</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container" id="mulai-baca">
+        
+        <h2 class="section-title">Pendahuluan</h2>
+        <p>
+            Masuknya pengaruh Hindu-Buddha ke Nusantara menandai awal babak baru dalam sejarah Indonesia. 
+            Periode ini membawa perubahan besar dalam berbagai aspek kehidupan masyarakat, mulai dari sistem 
+            pemerintahan, agama, bahasa, sastra, arsitektur, hingga seni. Nusantara yang sebelumnya berada 
+            dalam masa praaksara, mulai memasuki era sejarah dengan dikenalnya sistem tulisan.
+        </p>
+        <p style="margin-top: 1rem;">
+            Proses masuknya Hindu-Buddha ke Indonesia tidak terjadi secara tiba-tiba, melainkan melalui 
+            proses interaksi yang panjang antara masyarakat Nusantara dengan para pedagang, pendeta, dan 
+            pelajar dari India. Proses akulturasi (percampuran budaya) yang terjadi menghasilkan kebudayaan 
+            baru yang khas Indonesia, bukan sekadar tiruan dari budaya India.
+        </p>
+
+        <div class="highlight-box">
+            <h3>🔑 Konsep Kunci</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><strong>Akulturasi:</strong> Proses percampuran dua kebudayaan atau lebih yang saling bertemu dan menghasilkan kebudayaan baru tanpa menghilangkan ciri khas masing-masing.</li>
+                <li><strong>Asimilasi:</strong> Proses peleburan dua kebudayaan atau lebih yang menghasilkan kebudayaan baru yang berbeda dari kebudayaan asalnya.</li>
+                <li><strong>Sanskerta:</strong> Bahasa klasik India yang digunakan dalam prasasti-prasasti awal di Indonesia.</li>
+                <li><strong>Yupa:</strong> Tugu batu tempat mengikat hewan kurban, merupakan prasasti tertua di Indonesia (Kerajaan Kutai).</li>
+                <li><strong>Waisak:</strong> Hari raya umat Buddha untuk memperingati kelahiran, pencerahan, dan wafatnya Siddharta Gautama.</li>
+            </ul>
+        </div>
+
+        <div class="case-study">
+            <h4>📖 Studi Kasus 1: Prasasti Yupa Kutai</h4>
+            <p>
+                Di tepi Sungai Mahakam, Kalimantan Timur, ditemukan tujuh buah tugu batu yang disebut 
+                <strong>Yupa</strong>. Prasasti ini ditulis dalam huruf Pallawa dan bahasa Sanskerta, 
+                diperkirakan berasal dari abad ke-5 Masehi. Yupa berisi pujian kepada Raja Mulawarman 
+                yang telah memberikan sedekah 20.000 ekor sapi kepada para Brahmana.
+            </p>
+            <p style="margin-top: 1rem; font-weight: 600; color: var(--dark-gold);">
+                Pembelajaran: Yupa adalah bukti konkret paling awal tentang masuknya pengaruh Hindu ke 
+                Nusantara. Ini menunjukkan bahwa pada abad ke-5, masyarakat Kutai sudah mengenal sistem 
+                tulisan, agama Hindu, dan struktur kerajaan.
+            </p>
+        </div>
+
+        <div class="reflection">
+            <h4>💭 Refleksi untuk Siswa SMK</h4>
+            <p>
+                Proses akulturasi Hindu-Buddha dengan budaya lokal Nusantara adalah contoh sempurna tentang 
+                bagaimana bangsa Indonesia mampu menerima pengaruh asing tanpa kehilangan jati diri. 
+                Candi Borobudur, misalnya, adalah perpaduan antara konsep stupa Buddha dengan arsitektur 
+                punden berundak asli Indonesia. Semangat adaptasi dan kreativitas ini sangat relevan 
+                dengan dunia kerja modern di mana Anda harus mampu mengadopsi teknologi global sambil 
+                tetap mempertahankan nilai-nilai lokal.
+            </p>
+        </div>
+
+        <h2 class="section-title">6.1 Sejarah Singkat Agama Hindu dan Buddha</h2>
+        <p>
+            Sebelum memahami masuknya Hindu-Buddha ke Nusantara, penting untuk mengetahui asal-usul 
+            kedua agama ini di India.
+        </p>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Aspek</th>
+                    <th>Agama Hindu</th>
+                    <th>Agama Buddha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Pendiri</strong></td>
+                    <td>Tidak memiliki satu pendiri tunggal; berkembang dari tradisi Weda</td>
+                    <td>Siddharta Gautama (563-483 SM)</td>
+                </tr>
+                <tr>
+                    <td><strong>Kitab Suci</strong></td>
+                    <td>Weda (Rigweda, Yajurweda, Samaweda, Atharweda)</td>
+                    <td>Tipitaka (Vinaya Pitaka, Sutta Pitaka, Abhidhamma Pitaka)</td>
+                </tr>
+                <tr>
+                    <td><strong>Dewa Utama</strong></td>
+                    <td>Brahma (Pencipta), Wisnu (Pemelihara), Siwa (Pemusnah) — Trimurti</td>
+                    <td>Tidak menyembah dewa; fokus pada ajaran Buddha</td>
+                </tr>
+                <tr>
+                    <td><strong>Sistem Kasta</strong></td>
+                    <td>Mengenal 4 kasta: Brahmana, Ksatria, Waisya, Sudra</td>
+                    <td>Menolak sistem kasta; semua manusia setara</td>
+                </tr>
+                <tr>
+                    <td><strong>Tempat Ibadah</strong></td>
+                    <td>Pura, Candi</td>
+                    <td>Vihara, Candi, Stupa</td>
+                </tr>
+                <tr>
+                    <td><strong>Tujuan Hidup</strong></td>
+                    <td>Moksa (bersatunya Atman dengan Brahman)</td>
+                    <td>Nirwana (terbebas dari samsara/reinkarnasi)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">6.2 Teori Masuknya Hindu-Buddha ke Indonesia</h2>
+        <p>
+            Para sejarawan memiliki beberapa teori tentang bagaimana agama dan kebudayaan Hindu-Buddha 
+            masuk ke Nusantara. Setiap teori memiliki argumen dan bukti yang mendukung.
+        </p>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Nama Teori</th>
+                    <th>Tokoh Pencetus</th>
+                    <th>Inti Teori</th>
+                    <th>Kelemahan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Teori Brahmana</strong></td>
+                    <td>J.C. Van Leur</td>
+                    <td>Para Brahmana (pendeta Hindu) diundang oleh penguasa lokal untuk mengajarkan agama dan menobatkan raja.</td>
+                    <td>Para Brahmana terikat aturan ketat yang melarang mereka pergi jauh dari India.</td>
+                </tr>
+                <tr>
+                    <td><strong>Teori Ksatria</strong></td>
+                    <td>F.D.K. Bosch, C.C. Berg, Mookerji</td>
+                    <td>Para prajurit (ksatria) India yang kalah perang atau melarikan diri mendirikan kerajaan di Nusantara.</td>
+                    <td>Tidak ada bukti arkeologis tentang invasi militer India ke Nusantara.</td>
+                </tr>
+                <tr>
+                    <td><strong>Teori Waisya</strong></td>
+                    <td>N.J. Krom</td>
+                    <td>Para pedagang (waisya) India yang berlayar ke Nusantara untuk berdagang, kemudian menyebarkan agama.</td>
+                    <td>Para pedagang umumnya tidak memiliki pengetahuan agama yang mendalam.</td>
+                </tr>
+                <tr>
+                    <td><strong>Teori Sudra</strong></td>
+                    <td>Van Faber</td>
+                    <td>Para budak (sudra) India yang terbawa dalam pelayaran menyebarkan agama Hindu.</td>
+                    <td>Para budak umumnya tidak memiliki pendidikan agama yang memadai.</td>
+                </tr>
+                <tr>
+                    <td><strong>Teori Arus Balik</strong></td>
+                    <td>Soekmono</td>
+                    <td>Bangsa Indonesia sendiri yang aktif mempelajari agama Hindu-Buddha di India, kemudian pulang dan menyebarkannya.</td>
+                    <td>Membutuhkan waktu yang lama untuk proses pembelajaran di India.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box">
+            <h4>💡 Kesimpulan Teori</h4>
+            <p>
+                Teori <strong>Arus Balik</strong> dari Soekmono saat ini paling banyak diterima oleh para 
+                sejarawan karena didukung oleh bukti bahwa bangsa Indonesia memiliki kemampuan intelektual 
+                yang tinggi (terbukti dari pembangunan candi-candi megah) dan proses akulturasi yang 
+                menunjukkan peran aktif masyarakat Nusantara.
+            </p>
+        </div>
+
+        <div class="video-placeholder">
+            <span>▶</span>
+            <p>Video: Proses Masuknya Hindu-Buddha ke Nusantara</p>
+            <small>Sumber: Kanal Pendidikan Sejarah / Youtube</small>
+        </div>
+
+        <h2 class="section-title">6.3 Bukti-Bukti Masuknya Hindu-Buddha</h2>
+        <p>
+            Terdapat berbagai bukti arkeologis dan historis yang menunjukkan masuknya pengaruh Hindu-Buddha 
+            ke Nusantara. Bukti-bukti ini tersebar di berbagai wilayah Indonesia.
+        </p>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Jenis Bukti</th>
+                    <th>Contoh</th>
+                    <th>Lokasi</th>
+                    <th>Keterangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Prasasti</strong></td>
+                    <td>Yupa (7 buah)</td>
+                    <td>Kutai, Kalimantan Timur</td>
+                    <td>Prasasti tertua (abad ke-5 M), tentang Raja Mulawarman</td>
+                </tr>
+                <tr>
+                    <td><strong>Prasasti</strong></td>
+                    <td>Prasasti Ciaruteun</td>
+                    <td>Bogor, Jawa Barat</td>
+                    <td>Tinggalan Kerajaan Tarumanegara, Raja Purnawarman</td>
+                </tr>
+                <tr>
+                    <td><strong>Candi</strong></td>
+                    <td>Candi Borobudur</td>
+                    <td>Magelang, Jawa Tengah</td>
+                    <td>Candi Buddha terbesar di dunia, dibangun Dinasti Syailendra (abad ke-9)</td>
+                </tr>
+                <tr>
+                    <td><strong>Candi</strong></td>
+                    <td>Candi Prambanan</td>
+                    <td>Yogyakarta</td>
+                    <td>Candi Hindu untuk Trimurti (Siwa, Wisnu, Brahma)</td>
+                </tr>
+                <tr>
+                    <td><strong>Arca</strong></td>
+                    <td>Arca Buddha Amarawati</td>
+                    <td>Bukit Siguntang, Sumatera Selatan</td>
+                    <td>Bukti masuknya Buddha aliran Hinayana</td>
+                </tr>
+                <tr>
+                    <td><strong>Berita Asing</strong></td>
+                    <td>Catatan Fa-Hien, I-Tsing</td>
+                    <td>—</td>
+                    <td>Pelawat Cina yang mencatat keberadaan kerajaan Hindu-Buddha di Nusantara</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">6.4 Dampak Masuknya Hindu-Buddha</h2>
+        <div class="highlight-box">
+            <ol style="margin-left: 1.5rem;">
+                <li><strong>Bidang Agama:</strong> Masyarakat Nusantara mulai mengenal agama Hindu dan Buddha, menggantikan kepercayaan animisme dan dinamisme.</li>
+                <li><strong>Bidang Pemerintahan:</strong> Sistem pemerintahan berubah dari sistem kepala suku menjadi sistem kerajaan dengan raja sebagai pemimpin.</li>
+                <li><strong>Bidang Bahasa dan Sastra:</strong> Dikenalnya huruf Pallawa dan bahasa Sanskerta; munculnya karya sastra seperti Negarakertagama dan Sutasoma.</li>
+                <li><strong>Bidang Arsitektur:</strong> Pembangunan candi-candi megah yang merupakan perpaduan budaya India dan Nusantara.</li>
+                <li><strong>Bidang Sosial:</strong> Dikenalnya sistem kasta dalam Hindu, meskipun tidak seketat di India.</li>
+                <li><strong>Bidang Kalender:</strong> Penggunaan tahun Saka yang dimulai pada tahun 78 Masehi.</li>
+            </ol>
+        </div>
+
+        <h2 class="section-title">Kesimpulan</h2>
+        <p>
+            Masuknya Hindu-Buddha ke Nusantara merupakan babak penting dalam sejarah Indonesia yang 
+            menandai transisi dari masa praaksara ke masa sejarah. Proses ini terjadi melalui interaksi 
+            yang panjang dan damai, menghasilkan akulturasi budaya yang khas. Teori Arus Balik dari 
+            Soekmono paling banyak diterima karena menunjukkan peran aktif bangsa Indonesia dalam 
+            mengadopsi dan mengadaptasi budaya asing. Bukti-bukti seperti Yupa, prasasti, candi, dan 
+            arca menjadi saksi bisu kejayaan peradaban Hindu-Buddha di Nusantara.
+        </p>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">📚 Daftar Pustaka</h3>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; font-size: 0.95rem; color: var(--text-gray);">
+            <li>Soekmono, R. (1973). <em>Pengantar Sejarah Kebudayaan Indonesia 2</em>. Yogyakarta: Kanisius.</li>
+            <li>Poesponegoro, M. D., & Notosusanto, N. (2008). <em>Sejarah Nasional Indonesia II</em>. Jakarta: Balai Pustaka.</li>
+            <li>Supriadi. (2024). <em>Sejarah Kelas X SMK Kurikulum Merdeka</em>. Bukittinggi: FTIK UIN Bukittinggi.</li>
+            <li>Kulke, H. (1990). <em>The History of Early India</em>. New Delhi: Rupa & Co.</li>
+        </ul>
+
+        <div style="margin-top: 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <a href="5.html" class="btn btn-outline">← Kembali ke Pertemuan 5</a>
+            <a href="#uji-formatif" class="btn btn-primary">Lanjut ke Uji Formatif ↓</a>
+        </div>
+
+        <!-- Formative Test Section -->
+        <div class="test-section" id="uji-formatif">
+            <div class="test-header">
+                <h2>📋 Uji Formatif 6: Hindu-Buddha di Nusantara</h2>
+                <p>Materi: Sejarah Hindu-Buddha, teori masuknya Hindu-Buddha ke Indonesia, dan bukti-bukti pengaruhnya.</p>
+                <p class="warning-text" id="warningMsg">⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu!</p>
+            </div>
+
+            <form id="formatifForm">
+                <h3 style="margin-bottom: 1.5rem; color: var(--dark-gold);">📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label>* Nama Lengkap</label>
+                        <input type="text" id="nama" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* NIS</label>
+                        <input type="text" id="nis" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Tanggal Ujian</label>
+                        <input type="date" id="tanggal" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Kelas</label>
+                        <select id="kelas" class="form-control" required>
+                            <option value="">Pilih Kelas</option>
+                            <option value="X TKJ 1">X TKJ 1</option>
+                            <option value="X TKJ 2">X TKJ 2</option>
+                            <option value="X TBSM 1">X TBSM 1</option>
+                            <option value="X TBSM 2">X TBSM 2</option>
+                            <option value="X DKV 1">X DKV 1</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">📋 Bagian A – Pilihan Ganda (10 Soal, 10 poin/soal)</h3>
+                
+                <div class="question-block">
+                    <p class="question-text">1. Prasasti tertua di Indonesia yang menjadi bukti masuknya pengaruh Hindu adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> a. Prasasti Yupa</label>
+                        <label><input type="radio" name="q1" value="b"> b. Prasasti Ciaruteun</label>
+                        <label><input type="radio" name="q1" value="c"> c. Prasasti Kedukan Bukit</label>
+                        <label><input type="radio" name="q1" value="d"> d. Prasasti Talang Tuwo</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Teori yang menyatakan bahwa bangsa Indonesia sendiri yang aktif mempelajari agama Hindu-Buddha di India kemudian pulang dan menyebarkannya disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> a. Teori Brahmana</label>
+                        <label><input type="radio" name="q2" value="b"> b. Teori Ksatria</label>
+                        <label><input type="radio" name="q2" value="c"> c. Teori Waisya</label>
+                        <label><input type="radio" name="q2" value="d"> d. Teori Arus Balik</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Tokoh pencetus Teori Arus Balik adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> a. J.C. Van Leur</label>
+                        <label><input type="radio" name="q3" value="b"> b. N.J. Krom</label>
+                        <label><input type="radio" name="q3" value="c"> c. Soekmono</label>
+                        <label><input type="radio" name="q3" value="d"> d. F.D.K. Bosch</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Candi Borobudur merupakan candi terbesar di dunia yang menganut agama...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="a"> a. Hindu</label>
+                        <label><input type="radio" name="q4" value="b"> b. Buddha</label>
+                        <label><input type="radio" name="q4" value="c"> c. Konghucu</label>
+                        <label><input type="radio" name="q4" value="d"> d. Animisme</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Proses percampuran dua kebudayaan atau lebih yang saling bertemu dan menghasilkan kebudayaan baru tanpa menghilangkan ciri khas masing-masing disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="a"> a. Asimilasi</label>
+                        <label><input type="radio" name="q5" value="b"> b. Akulturasi</label>
+                        <label><input type="radio" name="q5" value="c"> c. Difusi</label>
+                        <label><input type="radio" name="q5" value="d"> d. Inkulturasi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">6. Tiga dewa utama dalam agama Hindu (Trimurti) adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> a. Brahma, Wisnu, Siwa</label>
+                        <label><input type="radio" name="q6" value="b"> b. Brahma, Wisnu, Indra</label>
+                        <label><input type="radio" name="q6" value="c"> c. Siwa, Parwati, Ganesha</label>
+                        <label><input type="radio" name="q6" value="d"> d. Wisnu, Siwa, Buddha</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">7. Kitab suci agama Buddha yang terdiri dari tiga keranjang ajaran disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="a"> a. Weda</label>
+                        <label><input type="radio" name="q7" value="b"> b. Tipitaka</label>
+                        <label><input type="radio" name="q7" value="c"> c. Upanishad</label>
+                        <label><input type="radio" name="q7" value="d"> d. Bhagavad Gita</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">8. Pendiri agama Buddha adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> a. Mahatma Gandhi</label>
+                        <label><input type="radio" name="q8" value="b"> b. Siddharta Gautama</label>
+                        <label><input type="radio" name="q8" value="c"> c. Ashoka</label>
+                        <label><input type="radio" name="q8" value="d"> d. Buddha Gautama</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">9. Candi Prambanan di Yogyakarta adalah candi yang dipersembahkan untuk...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="a"> a. Buddha Gautama</label>
+                        <label><input type="radio" name="q9" value="b"> b. Trimurti Hindu (Siwa, Wisnu, Brahma)</label>
+                        <label><input type="radio" name="q9" value="c"> c. Raja Balaputradewa</label>
+                        <label><input type="radio" name="q9" value="d"> d. Dewi Tara</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">10. Dampak masuknya Hindu-Buddha di bidang pemerintahan adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> a. Sistem pemerintahan berubah dari kerajaan menjadi demokrasi</label>
+                        <label><input type="radio" name="q10" value="b"> b. Sistem pemerintahan berubah dari kepala suku menjadi sistem kerajaan</label>
+                        <label><input type="radio" name="q10" value="c"> c. Tidak ada perubahan sistem pemerintahan</label>
+                        <label><input type="radio" name="q10" value="d"> d. Sistem pemerintahan menjadi republik</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">️ Bagian B – Essay (Penilaian Mandiri)</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-gray);">
+                    <em>Jawablah pertanyaan di bawah ini pada kertas atau kolom catatan Anda, lalu centang kotak di bawah jika jawaban Anda sudah memuat konsep kunci yang disebutkan. Setiap centang bernilai 5 poin (Total 20 poin/soal).</em>
+                </p>
+
+                <div class="question-block">
+                    <p class="question-text">1. Jelaskan perbedaan mendasar antara agama Hindu dan Buddha dilihat dari pendiri, kitab suci, dan sistem kasta!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Hindu: tidak ada pendiri tunggal, kitab Weda, mengenal 4 kasta.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Buddha: pendiri Siddharta Gautama, kitab Tipitaka, menolak sistem kasta.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Menyebutkan Trimurti dalam Hindu (Brahma, Wisnu, Siwa).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Menyebutkan tujuan hidup: Moksa (Hindu) vs Nirwana (Buddha).</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Bandingkan lima teori masuknya Hindu-Buddha ke Indonesia dan jelaskan mengapa Teori Arus Balik paling banyak diterima!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Teori Brahmana (Van Leur): pendeta diundang penguasa lokal.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Teori Ksatria (Bosch/Berg): prajurit India mendirikan kerajaan.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Teori Waisya (Krom): pedagang menyebarkan agama.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Teori Arus Balik (Soekmono): bangsa Indonesia aktif belajar di India, paling diterima karena menunjukkan peran aktif Nusantara.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Jelaskan makna dan pentingnya Prasasti Yupa sebagai bukti masuknya Hindu ke Indonesia!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Yupa adalah tugu batu tempat mengikat hewan kurban.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Ditemukan di Kutai, Kalimantan Timur, abad ke-5 Masehi.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Ditulis dalam huruf Pallawa dan bahasa Sanskerta.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Berisi pujian kepada Raja Mulawarman, bukti adanya kerajaan Hindu tertua.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Analisis proses akulturasi budaya Hindu-Buddha dengan budaya lokal Nusantara, berikan contoh konkret!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Akulturasi: percampuran budaya tanpa menghilangkan ciri khas masing-masing.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Contoh arsitektur: Candi Borobudur = stupa Buddha + punden berundak Nusantara.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Contoh seni: relief candi menggambarkan kehidupan lokal, bukan India.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Contoh sastra: Negarakertagama dan Sutasoma karya Mpu Prapanca dan Mpu Tantular.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Jelaskan dampak masuknya Hindu-Buddha terhadap kehidupan masyarakat Nusantara dalam bidang agama, pemerintahan, dan budaya!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Agama: pergeseran dari animisme-dinamisme ke Hindu-Buddha.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Pemerintahan: dari sistem kepala suku menjadi sistem kerajaan dengan raja.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Budaya: dikenalnya huruf Pallawa, bahasa Sanskerta, seni arsitektur candi.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Sosial: dikenalnya sistem kasta (meski tidak seketat di India) dan kalender Saka.</label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                </div>
+
+                <!-- Result Box -->
+                <div class="result-box" id="resultBox">
+                    <h3 style="color: var(--primary-gold); margin-bottom: 1rem;">📊 Hasil Uji Formatif 6</h3>
+                    <div class="score-display" id="totalScore">0</div>
+                    <p style="margin: 1rem 0; font-size: 1.1rem;">
+                        Bagian A (PG): <span id="scorePG" style="color: var(--primary-gold); font-weight: 700;">0</span>/100 | 
+                        Bagian B (Essay): <span id="scoreEssay" style="color: var(--primary-gold); font-weight: 700;">0</span>/100
+                    </p>
+                    <p id="feedbackText" style="margin-bottom: 1.5rem; font-style: italic;"></p>
+                    
+                    <div class="action-buttons">
+                        <button type="button" class="btn-action btn-pdf" onclick="unduhPDF()">📥 UNDUH PDF LENGKAP</button>
+                        <button type="button" class="btn-action btn-email" onclick="kirimEmail()">✉️ KIRIM EMAIL KE GURU</button>
+                        <button type="button" class="btn-action btn-reset" onclick="mulaiUlang()">🔄 MULAI ULANG</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Kunci Jawaban PG Pertemuan 6
+        const kunciPG = {
+            q1: 'a', q2: 'd', q3: 'c', q4: 'b', q5: 'b',
+            q6: 'a', q7: 'b', q8: 'b', q9: 'b', q10: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+            const warningMsg = document.getElementById('warningMsg');
+
+            // Validasi Data
+            if (!nama || !nis || !tanggal || !kelas) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua Data Siswa terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            // Validasi PG (harus dijawab semua)
+            let allPGAnswered = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    allPGAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allPGAnswered) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            warningMsg.style.display = 'none';
+
+            // Hitung Skor PG
+            let skorPG = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (selected === kunciPG[`q${i}`]) {
+                    skorPG += 10;
+                }
+            }
+
+            // Hitung Skor Essay (Self-Assessment)
+            let skorEssay = 0;
+            const essayChecks = document.querySelectorAll('.essay-check:checked');
+            skorEssay = essayChecks.length * 5; // 5 poin per checklist (20 checklist total x 5 = 100)
+
+            // Total Skor
+            const totalSkor = skorPG + skorEssay;
+
+            // Tampilkan Hasil
+            document.getElementById('scorePG').textContent = skorPG;
+            document.getElementById('scoreEssay').textContent = skorEssay;
+            document.getElementById('totalScore').textContent = totalSkor;
+            
+            const feedback = document.getElementById('feedbackText');
+            if (totalSkor >= 85) {
+                feedback.textContent = '🌟 Luar biasa! Pemahaman Anda tentang Hindu-Buddha di Nusantara sangat komprehensif.';
+            } else if (totalSkor >= 70) {
+                feedback.textContent = '👍 Bagus! Anda memahami konsep dasar, namun perlu pendalaman pada teori-teori masuknya Hindu-Buddha.';
+            } else {
+                feedback.textContent = '📚 Perlu belajar lagi. Silakan baca ulang materi tentang teori masuknya Hindu-Buddha dan bukti-bukti arkeologis.';
+            }
+
+            document.getElementById('resultBox').classList.add('show');
+            
+            // Disable form setelah submit
+            const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+            inputs.forEach(input => input.disabled = true);
+            
+            window.scrollTo({ top: document.getElementById('resultBox').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function unduhPDF() {
+            const element = document.getElementById('uji-formatif');
+            const nama = document.getElementById('nama').value;
+            const opt = {
+                margin: 10,
+                filename: `Uji_Formatif_6_Hindu_Buddha_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const skorPG = document.getElementById('scorePG').textContent;
+            const skorEssay = document.getElementById('scoreEssay').textContent;
+            const total = document.getElementById('totalScore').textContent;
+
+            const subject = `Hasil Uji Formatif 6 (Hindu-Buddha di Nusantara) - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Hafiza, S.Pd,\n\nBerikut adalah hasil Uji Formatif 6 saya:\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\n\nSkor Pilihan Ganda: ${skorPG}/100\nSkor Essay (Self-Assessment): ${skorEssay}/100\nTotal Skor: ${total}/200\n\nTerima kasih.`;
+            
+            window.location.href = `mailto:hafizafizalubi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function mulaiUlang() {
+            if (confirm('Apakah Anda yakin ingin mengulang uji formatif? Semua jawaban akan dihapus.')) {
+                document.getElementById('formatifForm').reset();
+                document.getElementById('resultBox').classList.remove('show');
+                
+                const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+                inputs.forEach(input => input.disabled = false);
+                
+                document.getElementById('warningMsg').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Tengah Semester - Sejarah Kelas X SMK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-gold: #B8941F;
+            --cream: #F5F0E6;
+            --dark: #1A1A1A;
+            --text-gray: #4A4A4A;
+            --white: #FFFFFF;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f0e6 0%, #e8e0d0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        .navbar {
+            background: var(--dark);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        /* Hero Chapter */
+        .chapter-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .chapter-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
+        }
+        .chapter-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .chapter-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .chapter-objective {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            position: relative;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-outline {
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+        .btn-outline:hover { background: var(--primary-gold); color: var(--dark); }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: var(--white);
+            margin-top: -2rem;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Typography & Components */
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--dark);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-gold);
+            display: inline-block;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-left: 4px solid var(--primary-gold);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        /* Test Section */
+        .test-section {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+            border: 2px solid var(--primary-gold);
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+        .question-block {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #eee;
+        }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .hots-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #dc2626, #991b1b);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        .lots-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        .options label {
+            display: block;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"],
+        .options input[type="checkbox"] { margin-right: 0.75rem; }
+        
+        /* Matching Section */
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .matching-column {
+            background: var(--cream);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .matching-column h4 {
+            color: var(--dark-gold);
+            margin-bottom: 0.75rem;
+        }
+        .matching-item {
+            padding: 0.75rem;
+            background: var(--white);
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .matching-item select {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .result-box {
+            background: var(--dark);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+        .result-box.show { display: block; animation: fadeIn 0.5s; }
+        .score-display {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-action {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-submit { background: var(--primary-gold); color: var(--dark); }
+        .btn-pdf { background: var(--dark); color: var(--primary-gold); border: 1px solid var(--primary-gold); }
+        .btn-email { background: #2563eb; color: white; }
+        .btn-reset { background: var(--error); color: white; }
+        .btn-action:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .warning-text {
+            color: var(--error);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .score-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .score-item {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .score-item h4 {
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .score-item .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .chapter-hero h1 { font-size: 1.75rem; }
+            .container { padding: 2rem 1rem; }
+            .action-buttons { flex-direction: column; }
+            .btn-action { width: 100%; justify-content: center; }
+            .matching-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Sejarah Kelas X</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li><a href="index.html#bab">Daftar Bab</a></li>
+                <li><a href="index.html#kontak">Penulis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <section class="chapter-hero">
+        <span class="chapter-badge">Pertemuan 8</span>
+        <h1>Ujian Tengah Semester (UTS)</h1>
+        <p class="chapter-objective">
+            Evaluasi komprehensif materi Pertemuan 1-7: Konsep Dasar Sejarah, Berpikir Historis, 
+            Penelitian & Manfaat Sejarah, Masa Praaksara, Kebudayaan Praaksara, Hindu-Buddha di Nusantara, 
+            dan Kerajaan Hindu-Buddha.
+        </p>
+        <div class="chapter-nav">
+            <a href="7.html" class="btn btn-outline">← Pertemuan 7</a>
+            <a href="#mulai-ujian" class="btn btn-primary">Mulai Ujian</a>
+            <a href="9.html" class="btn btn-outline">Pertemuan 9 →</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container" id="mulai-ujian">
+        
+        <div class="highlight-box">
+            <h3>📋 Informasi Ujian</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><strong>Materi:</strong> Pertemuan 1-7 (Bab 1, 2, dan 3)</li>
+                <li><strong>Jumlah Soal:</strong> 40 soal</li>
+                <li><strong>Waktu Pengerjaan:</strong> 90 menit</li>
+                <li><strong>Bobot Nilai:</strong></li>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Pilihan Ganda: 20 soal × 2 poin = 40 poin</li>
+                    <li>Pilihan Ganda Kompleks: 10 soal × 3 poin = 30 poin</li>
+                    <li>Benar/Salah: 5 soal × 2 poin = 10 poin</li>
+                    <li>Menjodohkan: 5 soal × 4 poin = 20 poin</li>
+                </ul>
+                <li><strong>Total Skor Maksimal:</strong> 100 poin</li>
+            </ul>
+        </div>
+
+        <!-- Formative Test Section -->
+        <div class="test-section" id="uji-formatif">
+            <div class="test-header">
+                <h2>📝 Ujian Tengah Semester</h2>
+                <p>Sejarah Kelas X SMK - Semester 1</p>
+                <p class="warning-text" id="warningMsg">⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu!</p>
+            </div>
+
+            <form id="formatifForm">
+                <h3 style="margin-bottom: 1.5rem; color: var(--dark-gold);">📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label>* Nama Lengkap</label>
+                        <input type="text" id="nama" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* NIS</label>
+                        <input type="text" id="nis" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Tanggal Ujian</label>
+                        <input type="date" id="tanggal" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Kelas</label>
+                        <select id="kelas" class="form-control" required>
+                            <option value="">Pilih Kelas</option>
+                            <option value="X TKJ 1">X TKJ 1</option>
+                            <option value="X TKJ 2">X TKJ 2</option>
+                            <option value="X TBSM 1">X TBSM 1</option>
+                            <option value="X TBSM 2">X TBSM 2</option>
+                            <option value="X DKV 1">X DKV 1</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- BAGIAN A: PILIHAN GANDA -->
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);"> Bagian A – Pilihan Ganda (20 Soal)</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-gray);">
+                    <em>Pilihlah satu jawaban yang paling tepat. Soal nomor 16-20 adalah soal HOTS (Higher Order Thinking Skills).</em>
+                </p>
+
+                <!-- LOTS Questions (1-15) -->
+                <div class="question-block">
+                    <p class="question-text">1. <span class="lots-badge">LOTS</span> Kata "sejarah" dalam bahasa Arab berasal dari kata "syajaratun" yang berarti...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> a. Pohon</label>
+                        <label><input type="radio" name="q1" value="b"> b. Cerita</label>
+                        <label><input type="radio" name="q1" value="c"> c. Masa lalu</label>
+                        <label><input type="radio" name="q1" value="d"> d. Peristiwa</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. <span class="lots-badge">LOTS</span> Bapak Sejarah Dunia yang menulis karya berjudul "Histories" adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> a. Herodotus</label>
+                        <label><input type="radio" name="q2" value="b"> b. Ibnu Khaldun</label>
+                        <label><input type="radio" name="q2" value="c"> c. Aristoteles</label>
+                        <label><input type="radio" name="q2" value="d"> d. R. Moh. Ali</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. <span class="lots-badge">LOTS</span> Konsep sejarah yang mempelajari peristiwa secara memanjang dalam waktu disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> a. Diakronik</label>
+                        <label><input type="radio" name="q3" value="b"> b. Sinkronik</label>
+                        <label><input type="radio" name="q3" value="c"> c. Kronologis</label>
+                        <label><input type="radio" name="q3" value="d"> d. Periodisasi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. <span class="lots-badge">LOTS</span> Kesalahan dalam menempatkan peristiwa, tokoh, atau objek pada zaman yang tidak sesuai dengan kenyataan disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="a"> a. Historiografi</label>
+                        <label><input type="radio" name="q4" value="b"> b. Anakronisme</label>
+                        <label><input type="radio" name="q4" value="c"> c. Verifikasi</label>
+                        <label><input type="radio" name="q4" value="d"> d. Interpretasi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. <span class="lots-badge">LOTS</span> Tahap pertama dalam metode penelitian sejarah yang bertujuan mengumpulkan sumber-sumber sejarah disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="a"> a. Heuristik</label>
+                        <label><input type="radio" name="q5" value="b"> b. Verifikasi</label>
+                        <label><input type="radio" name="q5" value="c"> c. Interpretasi</label>
+                        <label><input type="radio" name="q5" value="d"> d. Historiografi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">6. <span class="lots-badge">LOTS</span> Fungsi sejarah yang memberikan pelajaran moral dan kebijaksanaan dari pengalaman masa lalu disebut fungsi...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> a. Edukatif</label>
+                        <label><input type="radio" name="q6" value="b"> b. Inspiratif</label>
+                        <label><input type="radio" name="q6" value="c"> c. Instruktif</label>
+                        <label><input type="radio" name="q6" value="d"> d. Rekreatif</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">7. <span class="lots-badge">LOTS</span> Istilah lain yang sering digunakan untuk menyebut masa praaksara adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="a"> a. Nirleka</label>
+                        <label><input type="radio" name="q7" value="b"> b. Historiografi</label>
+                        <label><input type="radio" name="q7" value="c"> c. Kronologi</label>
+                        <label><input type="radio" name="q7" value="d"> d. Periodisasi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">8. <span class="lots-badge">LOTS</span> Teori yang menyatakan bahwa nenek moyang bangsa Indonesia berasal dari daerah Yunan (Cina Selatan) dikemukakan oleh...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> a. Mohammad Yamin</label>
+                        <label><input type="radio" name="q8" value="b"> b. Peter Bellwood</label>
+                        <label><input type="radio" name="q8" value="c"> c. R.H. Geldern</label>
+                        <label><input type="radio" name="q8" value="d"> d. Eugene Dubois</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">9. <span class="lots-badge">LOTS</span> Ciri utama kehidupan manusia pada Zaman Paleolitikum adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="a"> a. Sudah mengenal sistem bercocok tanam</label>
+                        <label><input type="radio" name="q9" value="b"> b. Hidup menetap di gua-gua permanen</label>
+                        <label><input type="radio" name="q9" value="c"> c. Food gathering (berburu dan meramu) serta hidup berpindah-pindah</label>
+                        <label><input type="radio" name="q9" value="d"> d. Sudah mampu melebur logam perunggu</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">10. <span class="lots-badge">LOTS</span> Bangunan megalitikum yang berbentuk tiang atau tugu batu tunggal sebagai tempat pemujaan roh nenek moyang disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> a. Menhir</label>
+                        <label><input type="radio" name="q10" value="b"> b. Dolmen</label>
+                        <label><input type="radio" name="q10" value="c"> c. Sarkofagus</label>
+                        <label><input type="radio" name="q10" value="d"> d. Waruga</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">11. <span class="lots-badge">LOTS</span> Menurut Jan Harold Brunvand, cerita yang dianggap benar-benar terjadi oleh empunya cerita dan berkaitan dengan dewa atau penciptaan alam disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q11" value="a"> a. Legenda</label>
+                        <label><input type="radio" name="q11" value="b"> b. Dongeng</label>
+                        <label><input type="radio" name="q11" value="c"> c. Mite (Mitos)</label>
+                        <label><input type="radio" name="q11" value="d"> d. Fabel</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">12. <span class="lots-badge">LOTS</span> Prasasti tertua di Indonesia yang menjadi bukti masuknya pengaruh Hindu adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q12" value="a"> a. Prasasti Yupa</label>
+                        <label><input type="radio" name="q12" value="b"> b. Prasasti Ciaruteun</label>
+                        <label><input type="radio" name="q12" value="c"> c. Prasasti Kedukan Bukit</label>
+                        <label><input type="radio" name="q12" value="d"> d. Prasasti Talang Tuwo</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">13. <span class="lots-badge">LOTS</span> Teori yang menyatakan bahwa bangsa Indonesia sendiri yang aktif mempelajari agama Hindu-Buddha di India kemudian pulang dan menyebarkannya disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q13" value="a"> a. Teori Brahmana</label>
+                        <label><input type="radio" name="q13" value="b"> b. Teori Ksatria</label>
+                        <label><input type="radio" name="q13" value="c"> c. Teori Waisya</label>
+                        <label><input type="radio" name="q13" value="d"> d. Teori Arus Balik</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">14. <span class="lots-badge">LOTS</span> Kerajaan Hindu tertua di Indonesia yang dibuktikan dengan adanya prasasti Yupa adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q14" value="a"> a. Tarumanegara</label>
+                        <label><input type="radio" name="q14" value="b"> b. Kutai</label>
+                        <label><input type="radio" name="q14" value="c"> c. Sriwijaya</label>
+                        <label><input type="radio" name="q14" value="d"> d. Mataram Kuno</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">15. <span class="lots-badge">LOTS</span> Candi Borobudur merupakan candi terbesar di dunia yang menganut agama...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q15" value="a"> a. Hindu</label>
+                        <label><input type="radio" name="q15" value="b"> b. Buddha</label>
+                        <label><input type="radio" name="q15" value="c"> c. Konghucu</label>
+                        <label><input type="radio" name="q15" value="d"> d. Animisme</label>
+                    </div>
+                </div>
+
+                <!-- HOTS Questions (16-20) -->
+                <div class="question-block">
+                    <p class="question-text">16. <span class="hots-badge">HOTS</span> Seorang sejarawan meneliti perkembangan sistem pemerintahan di Indonesia dari masa kerajaan Hindu-Buddha hingga masa kemerdekaan. Pendekatan yang paling tepat digunakan adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q16" value="a"> a. Sinkronik, karena fokus pada satu periode waktu tertentu</label>
+                        <label><input type="radio" name="q16" value="b"> b. Diakronik, karena memanjang dalam waktu dan menyempit dalam ruang</label>
+                        <label><input type="radio" name="q16" value="c"> c. Anakronisme, karena membandingkan berbagai zaman</label>
+                        <label><input type="radio" name="q16" value="d"> d. Historiografi, karena menuliskan kisah sejarah</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">17. <span class="hots-badge">HOTS</span> Berdasarkan bukti arkeologis, Candi Borobudur menunjukkan perpaduan antara konsep stupa Buddha dengan arsitektur punden berundak asli Indonesia. Fenomena ini merupakan contoh...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q17" value="a"> a. Asimilasi total budaya India ke Indonesia</label>
+                        <label><input type="radio" name="q17" value="b"> b. Akulturasi budaya yang menghasilkan bentuk baru tanpa menghilangkan ciri khas masing-masing</label>
+                        <label><input type="radio" name="q17" value="c"> c. Dominasi budaya India atas budaya lokal</label>
+                        <label><input type="radio" name="q17" value="d"> d. Penolakan budaya lokal terhadap pengaruh asing</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">18. <span class="hots-badge">HOTS</span> Di era digital, banyak beredar hoaks sejarah seperti "Soekarno adalah agen komunis". Metode penelitian sejarah yang paling efektif untuk memverifikasi klaim tersebut adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q18" value="a"> a. Hanya membaca sumber sekunder dari internet</label>
+                        <label><input type="radio" name="q18" value="b"> b. Melakukan verifikasi dengan kritik internal dan eksternal terhadap sumber primer</label>
+                        <label><input type="radio" name="q18" value="c"> c. Menerima semua informasi yang viral di media sosial</label>
+                        <label><input type="radio" name="q18" value="d"> d. Mengabaikan semua sumber sejarah karena subjektif</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">19. <span class="hots-badge">HOTS</span> Masyarakat praaksara dikenal dengan semangat gotong royong yang kuat untuk bertahan hidup. Nilai ini sangat relevan dengan dunia kerja modern karena...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q19" value="a"> a. Menghilangkan kompetisi dalam bekerja</label>
+                        <label><input type="radio" name="q19" value="b"> b. Kerja sama tim (teamwork) merupakan kunci keberhasilan proyek profesional</label>
+                        <label><input type="radio" name="q19" value="c"> c. Setiap individu harus bekerja sendiri tanpa bantuan orang lain</label>
+                        <label><input type="radio" name="q19" value="d"> d. Gotong royong hanya cocok untuk masyarakat tradisional</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">20. <span class="hots-badge">HOTS</span> Teori Arus Balik dari Soekmono paling banyak diterima oleh para sejarawan karena...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q20" value="a"> a. Menunjukkan bahwa bangsa Indonesia pasif menerima budaya asing</label>
+                        <label><input type="radio" name="q20" value="b"> b. Didukung oleh bukti kemampuan intelektual bangsa Indonesia dalam membangun candi-candi megah</label>
+                        <label><input type="radio" name="q20" value="c"> c. Merupakan teori tertua yang pernah dikemukakan</label>
+                        <label><input type="radio" name="q20" value="d"> d. Hanya berdasarkan asumsi tanpa bukti arkeologis</label>
+                    </div>
+                </div>
+
+                <!-- BAGIAN B: PILIHAN GANDA KOMPLEKS -->
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);"> Bagian B – Pilihan Ganda Kompleks (10 Soal)</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-gray);">
+                    <em>Pilihlah SEMUA jawaban yang benar (bisa lebih dari satu). Setiap soal memiliki 2-4 jawaban yang benar.</em>
+                </p>
+
+                <div class="question-block">
+                    <p class="question-text">21. Unsur-unsur yang menjadi konsep kunci dalam mempelajari sejarah adalah...</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q21" value="a"> a. Ruang (dimensi spasial)</label>
+                        <label><input type="checkbox" name="q21" value="b"> b. Waktu (dimensi temporal)</label>
+                        <label><input type="checkbox" name="q21" value="c"> c. Manusia sebagai pelaku sejarah</label>
+                        <label><input type="checkbox" name="q21" value="d"> d. Fiksi dan imajinasi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">22. Tahapan metode penelitian sejarah menurut Kuntowijoyo meliputi...</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q22" value="a"> a. Heuristik (pengumpulan sumber)</label>
+                        <label><input type="checkbox" name="q22" value="b"> b. Verifikasi (kritik sumber)</label>
+                        <label><input type="checkbox" name="q22" value="c"> c. Interpretasi (penafsiran fakta)</label>
+                        <label><input type="checkbox" name="q22" value="d"> d. Historiografi (penulisan sejarah)</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">23. Fungsi sejarah menurut Kuntowijoyo meliputi...</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q23" value="a"> a. Edukatif (pelajaran moral)</label>
+                        <label><input type="checkbox" name="q23" value="b"> b. Inspiratif (ilham dan semangat)</label>
+                        <label><input type="checkbox" name="q23" value="c"> c. Instruktif (keterampilan teknis)</label>
+                        <label><input type="checkbox" name="q23" value="d"> d. Rekreatif (pengalaman berwisata ke masa lalu)</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">24. Ciri-ciri kehidupan manusia pada Zaman Neolitikum meliputi...</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q24" value="a"> a. Food producing (bercocok tanam)</label>
+                        <label><input type="checkbox" name="q24" value="b"> b. Hidup menetap (sedenter)</label>
+                        <label><input type="checkbox" name="q24" value="c"> c. Mengenal kapak persegi dan kapak lonjong</label>
+                        <label><input type="checkbox" name="q24" value="d"> d. Mulai mengenal sistem kepercayaan animisme dan dinamisme</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">25. Jenis-jenis tradisi lisan (folklor) menurut Jan Harold Brunvand meliputi...</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q25" value="a"> a. Mite (mitos)</label>
+                        <label><input type="checkbox" name="q25" value="b"> b. Legenda</label>
+                        <label><input type="checkbox" name="q25" value="c"> c. Dongeng</label>
+                        <label><input type="checkbox" name="q25" value="d"> d. Artefak batu</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">26. Teori-teori masuknya Hindu-Buddha ke Indonesia meliputi...</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q26" value="a"> a. Teori Brahmana (J.C. Van Leur)</label>
+                        <label><input type="checkbox" name="q26" value="b"> b. Teori Ksatria (F.D.K. Bosch)</label>
+                        <label><input type="checkbox" name="q26" value="c"> c. Teori Waisya (N.J. Krom)</label>
+                        <label><input type="checkbox" name="q26" value="d"> d. Teori Arus Balik (Soekmono)</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">27. Kerajaan-kerajaan yang bercorak maritim di Nusantara meliputi...</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q27" value="a"> a. Sriwijaya</label>
+                        <label><input type="checkbox" name="q27" value="b"> b. Majapahit (sebagian)</label>
+                        <label><input type="checkbox" name="q27" value="c"> c. Kutai</label>
+                        <label><input type="checkbox" name="q27" value="d"> d. Tarumanegara</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">28. Hasil budaya pada Zaman Megalitikum meliputi...</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q28" value="a"> a. Menhir (tugu batu)</label>
+                        <label><input type="checkbox" name="q28" value="b"> b. Dolmen (meja batu)</label>
+                        <label><input type="checkbox" name="q28" value="c"> c. Sarkofagus (peti batu)</label>
+                        <label><input type="checkbox" name="q28" value="d"> d. Punden berundak (bangunan bertingkat)</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">29. Dampak masuknya Hindu-Buddha terhadap masyarakat Nusantara meliputi...</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q29" value="a"> a. Perubahan sistem pemerintahan dari kepala suku menjadi kerajaan</label>
+                        <label><input type="checkbox" name="q29" value="b"> b. Dikenalnya huruf Pallawa dan bahasa Sanskerta</label>
+                        <label><input type="checkbox" name="q29" value="c"> c. Pembangunan candi-candi megah</label>
+                        <label><input type="checkbox" name="q29" value="d"> d. Pengenalan sistem kasta dalam masyarakat</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">30. Komponen-komponen berpikir historis meliputi...</p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q30" value="a"> a. Kronologis (urutan waktu)</label>
+                        <label><input type="checkbox" name="q30" value="b"> b. Diakronik (memanjang dalam waktu)</label>
+                        <label><input type="checkbox" name="q30" value="c"> c. Sinkronik (melebar dalam ruang)</label>
+                        <label><input type="checkbox" name="q30" value="d"> d. Menghindari anakronisme</label>
+                    </div>
+                </div>
+
+                <!-- BAGIAN C: BENAR/SALAH -->
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);"> Bagian C – Benar/Salah (5 Soal)</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-gray);">
+                    <em>Tentukan apakah pernyataan berikut BENAR atau SALAH.</em>
+                </p>
+
+                <div class="question-block">
+                    <p class="question-text">31. Sejarah dikatakan sebagai ilmu karena memiliki syarat-syarat ilmiah seperti empiris, objektif, dan memiliki teori.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q31" value="benar"> ✓ BENAR</label>
+                        <label><input type="radio" name="q31" value="salah"> ✗ SALAH</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">32. Konsep diakronik dalam sejarah berarti melebar dalam ruang dan menyempit dalam waktu.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q32" value="benar"> ✓ BENAR</label>
+                        <label><input type="radio" name="q32" value="salah"> ✗ SALAH</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">33. Pada Zaman Paleolitikum, manusia sudah mengenal sistem bercocok tanam dan hidup menetap.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q33" value="benar"> ✓ BENAR</label>
+                        <label><input type="radio" name="q33" value="salah"> ✗ SALAH</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">34. Candi Borobudur merupakan peninggalan Kerajaan Mataram Kuno yang bercorak agama Buddha.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q34" value="benar"> ✓ BENAR</label>
+                        <label><input type="radio" name="q34" value="salah"> ✗ SALAH</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">35. Kerajaan Majapahit merupakan kerajaan agraris yang berpusat di Jawa Timur dengan raja terkenal Hayam Wuruk.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q35" value="benar"> ✓ BENAR</label>
+                        <label><input type="radio" name="q35" value="salah"> ✗ SALAH</label>
+                    </div>
+                </div>
+
+                <!-- BAGIAN D: MENJODOHKAN -->
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);"> Bagian D – Menjodohkan (5 Soal)</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-gray);">
+                    <em>Jodohkanlah tokoh/istilah di kolom kiri dengan keterangan yang tepat di kolom kanan.</em>
+                </p>
+
+                <div class="question-block">
+                    <p class="question-text">36. Jodohkan tokoh/istilah berikut dengan keterangannya:</p>
+                    <div class="matching-container">
+                        <div class="matching-column">
+                            <h4>Tokoh/Istilah</h4>
+                            <div class="matching-item">
+                                <span>1. Herodotus</span>
+                            </div>
+                            <div class="matching-item">
+                                <span>2. Eugene Dubois</span>
+                            </div>
+                            <div class="matching-item">
+                                <span>3. Soekmono</span>
+                            </div>
+                            <div class="matching-item">
+                                <span>4. Mpu Prapanca</span>
+                            </div>
+                            <div class="matching-item">
+                                <span>5. Balaputradewa</span>
+                            </div>
+                        </div>
+                        <div class="matching-column">
+                            <h4>Keterangan</h4>
+                            <div class="matching-item">
+                                <select name="match1">
+                                    <option value="">Pilih...</option>
+                                    <option value="a">a. Penemu Pithecanthropus erectus di Trinil</option>
+                                    <option value="b">b. Raja Sriwijaya yang membawa kerajaan ke puncak kejayaan</option>
+                                    <option value="c">c. Bapak Sejarah Dunia, penulis "Histories"</option>
+                                    <option value="d">d. Pencetus Teori Arus Balik</option>
+                                    <option value="e">e. Penulis Kitab Negarakertagama</option>
+                                </select>
+                            </div>
+                            <div class="matching-item">
+                                <select name="match2">
+                                    <option value="">Pilih...</option>
+                                    <option value="a">a. Penemu Pithecanthropus erectus di Trinil</option>
+                                    <option value="b">b. Raja Sriwijaya yang membawa kerajaan ke puncak kejayaan</option>
+                                    <option value="c">c. Bapak Sejarah Dunia, penulis "Histories"</option>
+                                    <option value="d">d. Pencetus Teori Arus Balik</option>
+                                    <option value="e">e. Penulis Kitab Negarakertagama</option>
+                                </select>
+                            </div>
+                            <div class="matching-item">
+                                <select name="match3">
+                                    <option value="">Pilih...</option>
+                                    <option value="a">a. Penemu Pithecanthropus erectus di Trinil</option>
+                                    <option value="b">b. Raja Sriwijaya yang membawa kerajaan ke puncak kejayaan</option>
+                                    <option value="c">c. Bapak Sejarah Dunia, penulis "Histories"</option>
+                                    <option value="d">d. Pencetus Teori Arus Balik</option>
+                                    <option value="e">e. Penulis Kitab Negarakertagama</option>
+                                </select>
+                            </div>
+                            <div class="matching-item">
+                                <select name="match4">
+                                    <option value="">Pilih...</option>
+                                    <option value="a">a. Penemu Pithecanthropus erectus di Trinil</option>
+                                    <option value="b">b. Raja Sriwijaya yang membawa kerajaan ke puncak kejayaan</option>
+                                    <option value="c">c. Bapak Sejarah Dunia, penulis "Histories"</option>
+                                    <option value="d">d. Pencetus Teori Arus Balik</option>
+                                    <option value="e">e. Penulis Kitab Negarakertagama</option>
+                                </select>
+                            </div>
+                            <div class="matching-item">
+                                <select name="match5">
+                                    <option value="">Pilih...</option>
+                                    <option value="a">a. Penemu Pithecanthropus erectus di Trinil</option>
+                                    <option value="b">b. Raja Sriwijaya yang membawa kerajaan ke puncak kejayaan</option>
+                                    <option value="c">c. Bapak Sejarah Dunia, penulis "Histories"</option>
+                                    <option value="d">d. Pencetus Teori Arus Balik</option>
+                                    <option value="e">e. Penulis Kitab Negarakertagama</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                </div>
+
+                <!-- Result Box -->
+                <div class="result-box" id="resultBox">
+                    <h3 style="color: var(--primary-gold); margin-bottom: 1rem;"> Hasil Ujian Tengah Semester</h3>
+                    <div class="score-display" id="totalScore">0</div>
+                    <p style="margin: 1rem 0; font-size: 1.1rem;">dari 100 poin</p>
+                    
+                    <div class="score-breakdown">
+                        <div class="score-item">
+                            <h4>Pilihan Ganda</h4>
+                            <div class="value" id="scorePG">0/40</div>
+                        </div>
+                        <div class="score-item">
+                            <h4>PG Kompleks</h4>
+                            <div class="value" id="scorePGK">0/30</div>
+                        </div>
+                        <div class="score-item">
+                            <h4>Benar/Salah</h4>
+                            <div class="value" id="scoreBS">0/10</div>
+                        </div>
+                        <div class="score-item">
+                            <h4>Menjodohkan</h4>
+                            <div class="value" id="scoreMatch">0/20</div>
+                        </div>
+                    </div>
+
+                    <p id="feedbackText" style="margin-bottom: 1.5rem; font-style: italic;"></p>
+                    
+                    <div class="action-buttons">
+                        <button type="button" class="btn-action btn-pdf" onclick="unduhPDF()">📥 UNDUH PDF LENGKAP</button>
+                        <button type="button" class="btn-action btn-email" onclick="kirimEmail()">✉️ KIRIM EMAIL KE GURU</button>
+                        <button type="button" class="btn-action btn-reset" onclick="mulaiUlang()">🔄 MULAI ULANG</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Kunci Jawaban
+        const kunciPG = {
+            q1: 'a', q2: 'a', q3: 'a', q4: 'b', q5: 'a',
+            q6: 'a', q7: 'a', q8: 'c', q9: 'c', q10: 'a',
+            q11: 'c', q12: 'a', q13: 'd', q14: 'b', q15: 'b',
+            q16: 'b', q17: 'b', q18: 'b', q19: 'b', q20: 'b'
+        };
+
+        const kunciPGK = {
+            q21: ['a', 'b', 'c'],
+            q22: ['a', 'b', 'c', 'd'],
+            q23: ['a', 'b', 'c', 'd'],
+            q24: ['a', 'b', 'c', 'd'],
+            q25: ['a', 'b', 'c'],
+            q26: ['a', 'b', 'c', 'd'],
+            q27: ['a', 'b'],
+            q28: ['a', 'b', 'c', 'd'],
+            q29: ['a', 'b', 'c', 'd'],
+            q30: ['a', 'b', 'c', 'd']
+        };
+
+        const kunciBS = {
+            q31: 'benar', q32: 'salah', q33: 'salah', q34: 'benar', q35: 'benar'
+        };
+
+        const kunciMatch = {
+            match1: 'c', match2: 'a', match3: 'd', match4: 'e', match5: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+            const warningMsg = document.getElementById('warningMsg');
+
+            // Validasi Data
+            if (!nama || !nis || !tanggal || !kelas) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua Data Siswa terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            // Validasi PG (harus dijawab semua)
+            let allPGAnswered = true;
+            for (let i = 1; i <= 20; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    allPGAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allPGAnswered) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua 20 soal pilihan ganda terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            // Validasi PG Kompleks
+            let allPGKAnswered = true;
+            for (let i = 21; i <= 30; i++) {
+                const checked = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                if (checked.length === 0) {
+                    allPGKAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allPGKAnswered) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '️ Mohon lengkapi semua 10 soal pilihan ganda kompleks terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            // Validasi BS
+            let allBSAnswered = true;
+            for (let i = 31; i <= 35; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    allBSAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allBSAnswered) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '️ Mohon lengkapi semua 5 soal benar/salah terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            // Validasi Matching
+            let allMatchAnswered = true;
+            for (let i = 1; i <= 5; i++) {
+                if (!document.querySelector(`select[name="match${i}"]`).value) {
+                    allMatchAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allMatchAnswered) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua 5 soal menjodohkan terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            warningMsg.style.display = 'none';
+
+            // Hitung Skor PG (20 soal × 2 poin = 40 poin)
+            let skorPG = 0;
+            for (let i = 1; i <= 20; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (selected === kunciPG[`q${i}`]) {
+                    skorPG += 2;
+                }
+            }
+
+            // Hitung Skor PG Kompleks (10 soal × 3 poin = 30 poin)
+            let skorPGK = 0;
+            for (let i = 21; i <= 30; i++) {
+                const selected = Array.from(document.querySelectorAll(`input[name="q${i}"]:checked`)).map(cb => cb.value);
+                const correct = kunciPGK[`q${i}`];
+                
+                // Hitung jawaban benar yang dipilih
+                let correctSelected = selected.filter(s => correct.includes(s)).length;
+                // Hitung jawaban salah yang dipilih
+                let wrongSelected = selected.filter(s => !correct.includes(s)).length;
+                
+                // Skor: (benar yang dipilih / total benar) × 3 - (salah yang dipilih × 0.5)
+                let soalScore = (correctSelected / correct.length) * 3 - (wrongSelected * 0.5);
+                skorPGK += Math.max(0, soalScore);
+            }
+            skorPGK = Math.round(skorPGK * 10) / 10; // Round to 1 decimal
+
+            // Hitung Skor BS (5 soal × 2 poin = 10 poin)
+            let skorBS = 0;
+            for (let i = 31; i <= 35; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (selected === kunciBS[`q${i}`]) {
+                    skorBS += 2;
+                }
+            }
+
+            // Hitung Skor Matching (5 soal × 4 poin = 20 poin)
+            let skorMatch = 0;
+            for (let i = 1; i <= 5; i++) {
+                const selected = document.querySelector(`select[name="match${i}"]`).value;
+                if (selected === kunciMatch[`match${i}`]) {
+                    skorMatch += 4;
+                }
+            }
+
+            // Total Skor
+            const totalSkor = skorPG + skorPGK + skorBS + skorMatch;
+
+            // Tampilkan Hasil
+            document.getElementById('scorePG').textContent = `${skorPG}/40`;
+            document.getElementById('scorePGK').textContent = `${skorPGK}/30`;
+            document.getElementById('scoreBS').textContent = `${skorBS}/10`;
+            document.getElementById('scoreMatch').textContent = `${skorMatch}/20`;
+            document.getElementById('totalScore').textContent = totalSkor.toFixed(1);
+            
+            const feedback = document.getElementById('feedbackText');
+            if (totalSkor >= 85) {
+                feedback.textContent = '🌟 Luar biasa! Pemahaman Anda tentang materi Semester 1 sangat komprehensif. Pertahankan!';
+            } else if (totalSkor >= 70) {
+                feedback.textContent = '👍 Bagus! Anda memahami sebagian besar materi, namun perlu pendalaman pada beberapa konsep.';
+            } else if (totalSkor >= 60) {
+                feedback.textContent = '📚 Cukup. Anda perlu mengulang beberapa materi, terutama pada bagian HOTS dan analisis.';
+            } else {
+                feedback.textContent = '⚠️ Perlu belajar lebih giat. Silakan review materi Pertemuan 1-7 dan coba lagi.';
+            }
+
+            document.getElementById('resultBox').classList.add('show');
+            
+            // Disable form setelah submit
+            const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+            inputs.forEach(input => input.disabled = true);
+            
+            window.scrollTo({ top: document.getElementById('resultBox').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function unduhPDF() {
+            const element = document.getElementById('uji-formatif');
+            const nama = document.getElementById('nama').value;
+            const opt = {
+                margin: 10,
+                filename: `UTS_Semester1_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const total = document.getElementById('totalScore').textContent;
+            const skorPG = document.getElementById('scorePG').textContent;
+            const skorPGK = document.getElementById('scorePGK').textContent;
+            const skorBS = document.getElementById('scoreBS').textContent;
+            const skorMatch = document.getElementById('scoreMatch').textContent;
+
+            const subject = `Hasil UTS Semester 1 - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Hafiza, S.Pd,\n\nBerikut adalah hasil Ujian Tengah Semester saya:\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\n\nRincian Skor:\n- Pilihan Ganda: ${skorPG}\n- PG Kompleks: ${skorPGK}\n- Benar/Salah: ${skorBS}\n- Menjodohkan: ${skorMatch}\n\nTotal Skor: ${total}/100\n\nTerima kasih.`;
+            
+            window.location.href = `mailto:hafizafizalubi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function mulaiUlang() {
+            if (confirm('Apakah Anda yakin ingin mengulang ujian? Semua jawaban akan dihapus.')) {
+                document.getElementById('formatifForm').reset();
+                document.getElementById('resultBox').classList.remove('show');
+                
+                const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+                inputs.forEach(input => input.disabled = false);
+                
+                document.getElementById('warningMsg').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

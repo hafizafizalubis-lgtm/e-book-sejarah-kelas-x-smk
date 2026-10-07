@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 14: Jalur Rempah pada Masa Islam - Sejarah Kelas X SMK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-gold: #B8941F;
+            --cream: #F5F0E6;
+            --dark: #1A1A1A;
+            --text-gray: #4A4A4A;
+            --white: #FFFFFF;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f0e6 0%, #e8e0d0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        .navbar {
+            background: var(--dark);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        /* Hero Chapter */
+        .chapter-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .chapter-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
+        }
+        .chapter-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .chapter-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .chapter-objective {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            position: relative;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-outline {
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+        .btn-outline:hover { background: var(--primary-gold); color: var(--dark); }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: var(--white);
+            margin-top: -2rem;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Typography & Components */
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--dark);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-gold);
+            display: inline-block;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-left: 4px solid var(--primary-gold);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .case-study {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .case-study h4 { color: var(--dark-gold); margin-bottom: 0.5rem; }
+        .reflection {
+            background: var(--dark);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .reflection h4 { color: var(--primary-gold); margin-bottom: 0.5rem; }
+
+        /* Tables */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .styled-table th {
+            background: var(--dark);
+            color: var(--primary-gold);
+            padding: 1rem;
+            text-align: left;
+            font-family: 'Playfair Display', serif;
+        }
+        .styled-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .styled-table tr:hover { background: var(--cream); }
+
+        /* Video Placeholder */
+        .video-placeholder {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            margin: 1.5rem 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        .video-placeholder span { font-size: 3rem; margin-bottom: 0.5rem; }
+
+        /* Formative Test Styles */
+        .test-section {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+            border: 2px solid var(--primary-gold);
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+        .question-block {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #eee;
+        }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .options label {
+            display: block;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 0.75rem; }
+        
+        .essay-checklist {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+        }
+        .essay-checklist label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .essay-checklist input[type="checkbox"] {
+            margin-top: 0.25rem;
+            accent-color: var(--primary-gold);
+        }
+
+        .result-box {
+            background: var(--dark);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+        .result-box.show { display: block; animation: fadeIn 0.5s; }
+        .score-display {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-action {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-submit { background: var(--primary-gold); color: var(--dark); }
+        .btn-pdf { background: var(--dark); color: var(--primary-gold); border: 1px solid var(--primary-gold); }
+        .btn-email { background: #2563eb; color: white; }
+        .btn-reset { background: var(--error); color: white; }
+        .btn-action:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .warning-text {
+            color: var(--error);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .chapter-hero h1 { font-size: 1.75rem; }
+            .container { padding: 2rem 1rem; }
+            .action-buttons { flex-direction: column; }
+            .btn-action { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Sejarah Kelas X</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li><a href="index.html#bab">Daftar Bab</a></li>
+                <li><a href="index.html#kontak">Penulis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <section class="chapter-hero">
+        <span class="chapter-badge">Pertemuan 14</span>
+        <h1>Jalur Rempah pada Masa Islam</h1>
+        <p class="chapter-objective">
+            Menganalisis perkembangan jalur rempah pada masa Islam, peran kesultanan-kesultanan Islam 
+            dalam perdagangan global, serta pengaruhnya terhadap Indonesia dan dunia internasional.
+        </p>
+        <div class="chapter-nav">
+            <a href="13.html" target="_blank" class="btn btn-outline">← Pertemuan 13</a>
+            <a href="#mulai-baca" class="btn btn-primary">Mulai Membaca</a>
+            <a href="15.html" target="_blank" class="btn btn-outline">Pertemuan 15 →</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container" id="mulai-baca">
+        
+        <h2 class="section-title">Pendahuluan</h2>
+        <p>
+            Memasuki abad ke-13 dan seterusnya, peta perdagangan rempah-rempah dunia mengalami transformasi 
+            signifikan dengan muncul dan berkembangnya kerajaan-kerajaan Islam di Nusantara. Kesultanan-kesultanan 
+            Islam tidak hanya menggantikan peran kerajaan Hindu-Buddha sebelumnya, tetapi juga membawa dinamika 
+            baru dalam jaringan perdagangan global yang menghubungkan Timur dan Barat.
+        </p>
+        <p style="margin-top: 1rem;">
+            Pada masa ini, pelabuhan-pelabuhan Islam seperti Malaka, Aceh, Demak, dan Gowa-Tallo menjadi 
+            pusat pertemuan pedagang dari Arab, Persia, India, Cina, dan kelak Eropa. Perdagangan rempah 
+            tidak hanya menjadi aktivitas ekonomi, tetapi juga menjadi medium penyebaran agama, budaya, 
+            dan teknologi. Ambisi bangsa Eropa untuk memonopoli perdagangan ini pada akhirnya mengubah 
+            arah sejarah dunia, memicu era penjelajahan samudra dan kolonialisme.
+        </p>
+
+        <div class="highlight-box">
+            <h3>🔑 Konsep Kunci</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><strong>Monopoli Perdagangan:</strong> Penguasaan penuh atas perdagangan komoditas tertentu oleh satu pihak, yang diupayakan oleh bangsa Eropa di Nusantara.</li>
+                <li><strong>Revolusi Harga (Price Revolution):</strong> Lonjakan harga rempah-rempah yang sangat tinggi di Eropa akibat kelangkaan dan tingginya permintaan, memicu penjelajahan samudra.</li>
+                <li><strong>Entrepot:</strong> Pelabuhan pusat transit di mana barang dari berbagai daerah dikumpulkan sebelum didistribusikan ke pasar internasional.</li>
+                <li><strong>Revolusi Perdagangan:</strong> Perubahan struktur perdagangan global dari yang didominasi oleh pedagang Asia menjadi didominasi oleh bangsa Eropa.</li>
+            </ul>
+        </div>
+
+        <div class="case-study">
+            <h4>📖 Studi Kasus 1: Kejayaan dan Runtuhnya Kesultanan Malaka</h4>
+            <p>
+                Pada abad ke-15, Kesultanan Malaka mencapai puncak kejayaan sebagai <em>entrepot</em> 
+                terbesar di Asia Tenggara. Sultan Mansur Syah menerapkan kebijakan perdagangan yang terbuka 
+                dan adil, menarik pedagang dari Cina, India, dan Arab. Namun, kekayaan ini menarik perhatian 
+                Portugis. Pada tahun 1511, Alfonso de Albuquerque menaklukkan Malaka, mengakhiri era 
+                perdagangan bebas dan membuka babak baru monopoli dan kolonialisme Eropa di Nusantara.
+            </p>
+            <p style="margin-top: 1rem; font-weight: 600; color: var(--dark-gold);">
+                Pembelajaran: Kekayaan sumber daya alam tanpa kekuatan pertahanan dan diplomasi yang memadai 
+                dapat menjadi sasaran eksploitasi pihak asing.
+            </p>
+        </div>
+
+        <div class="reflection">
+            <h4>💭 Refleksi untuk Siswa SMK</h4>
+            <p>
+                Sejarah perdagangan rempah mengajarkan tentang pentingnya nilai tambah (value added) dan 
+                manajemen rantai pasok. Di masa lalu, Nusantara hanya sebagai penghasil bahan mentah, 
+                sementara keuntungan terbesar dinikmati oleh pedagang perantara dan Eropa. Sebagai siswa 
+                SMK, Anda dapat belajar dari ini: jangan hanya menjadi konsumen atau pekerja mentah, 
+                tetapi berupayalah menjadi inovator yang menciptakan produk bernilai tinggi dan menguasai 
+                pasar, baik di bidang teknologi, bisnis, maupun kreatif.
+            </p>
+        </div>
+
+        <h2 class="section-title">14.1 Peran Kesultanan Islam dalam Jalur Rempah</h2>
+        <p>
+            Kesultanan-kesultanan Islam di Nusantara memainkan peran sentral dalam mengendalikan dan 
+            memfasilitasi perdagangan rempah-rempah. Mereka membangun infrastruktur pelabuhan, sistem 
+            hukum perdagangan, dan jaringan diplomasi yang luas.
+        </p>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Kesultanan</th>
+                    <th>Peran Strategis dalam Perdagangan</th>
+                    <th>Komoditas Utama</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Malaka</strong></td>
+                    <td>Pusat transit (entrepot) utama yang menghubungkan pedagang Cina, India, dan Arab.</td>
+                    <td>Lada, timah, tekstil</td>
+                </tr>
+                <tr>
+                    <td><strong>Aceh Darussalam</strong></td>
+                    <td>Menggantikan peran Malaka setelah 1511, menguasai ujung utara Sumatera dan Selat Malaka.</td>
+                    <td>Lada, kemenyan, kapur barus</td>
+                </tr>
+                <tr>
+                    <td><strong>Demak</strong></td>
+                    <td>Pusat perdagangan di pesisir utara Jawa, penghubung antara produsen rempah di timur dan pasar di barat.</td>
+                    <td>Beras, lada, kayu</td>
+                </tr>
+                <tr>
+                    <td><strong>Gowa-Tallo</strong></td>
+                    <td>Pusat perdagangan di Indonesia Timur, menantang monopoli VOC, pelabuhan bebas (free port).</td>
+                    <td>Cengkeh, pala, kayu cendana</td>
+                </tr>
+                <tr>
+                    <td><strong>Ternate & Tidore</strong></td>
+                    <td>Produsen utama rempah-rempah dunia, mengendalikan kepulauan penghasil cengkeh dan pala.</td>
+                    <td>Cengkeh (Ternate), Pala (Tidore)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">14.2 Dampak Jalur Rempah bagi Nusantara</h2>
+        <p>
+            Integrasi Nusantara ke dalam jaringan perdagangan global pada masa Islam membawa dampak 
+            multidimensional, baik positif maupun negatif.
+        </p>
+        <div class="highlight-box">
+            <ol style="margin-left: 1.5rem;">
+                <li><strong>Ekonomi:</strong> Tumbuhnya kota-kota pelabuhan yang makmur, munculnya kelas pedagang kaya (borjuis), dan penggunaan mata uang (koin emas/perak) dalam transaksi.</li>
+                <li><strong>Sosial:</strong> Terbentuknya masyarakat kosmopolitan di kota pelabuhan, dengan percampuran etnis Melayu, Jawa, Arab, Cina, dan India.</li>
+                <li><strong>Budaya:</strong> Akulturasi yang kaya, terlihat dalam arsitektur masjid, pakaian (kain batik dengan motif Cina/Arab), dan seni pertunjukan.</li>
+                <li><strong>Agama:</strong> Jalur perdagangan menjadi saluran utama penyebaran Islam yang damai dan efektif melalui interaksi pedagang Muslim dengan masyarakat lokal.</li>
+            </ol>
+        </div>
+
+        <h2 class="section-title">14.3 Pengaruh Jalur Rempah terhadap Dunia Internasional</h2>
+        <p>
+            Rempah-rempah dari Nusantara tidak hanya mengubah wajah kepulauan ini, tetapi juga 
+            mengubah sejarah dunia secara fundamental.
+        </p>
+        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+            <li style="margin-bottom: 0.75rem;"><strong>Pemicu Penjelajahan Samudra:</strong> Jatuhnya Konstantinopel ke tangan Turki Utsmani (1453) memutus jalur darat rempah ke Eropa. Hal ini memaksa bangsa Eropa (Portugis, Spanyol, Belanda, Inggris) mencari jalur laut langsung ke "Kepulauan Rempah-rempah".</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Revolusi Harga di Eropa:</strong> Tingginya harga rempah-rempah menciptakan kekayaan luar biasa bagi negara yang berhasil memonopolinya, mendanai Renaisans dan Revolusi Industri.</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Lahirnya Kapitalisme Global:</strong> Pembentukan perusahaan dagang raksasa seperti VOC (Belanda) dan EIC (Inggris) menandai awal sistem ekonomi kapitalis dan korporasi multinasional.</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Kolonialisme dan Imperialisme:</strong> Keinginan untuk menguasai sumber rempah-rempah secara langsung melahirkan era penjajahan yang berlangsung berabad-abad di Asia, Afrika, dan Amerika.</li>
+        </ul>
+
+        <div class="video-placeholder">
+            <span>▶</span>
+            <p>Video: Dampak Global Jalur Rempah Nusantara</p>
+            <small>Sumber: Kanal Pendidikan Sejarah / Youtube</small>
+        </div>
+
+        <h2 class="section-title">Kesimpulan</h2>
+        <p>
+            Jalur rempah pada masa Islam merupakan periode emas sekaligus titik balik dalam sejarah 
+            Nusantara. Kesultanan-kesultanan Islam berhasil membangun jaringan perdagangan yang maju 
+            dan kosmopolitan. Namun, daya tarik kekayaan rempah-rempah juga mengundang intervensi 
+            bangsa Eropa, yang mengubah pola perdagangan bebas menjadi monopoli dan kolonialisme. 
+            Warisan sejarah ini mengajarkan kita tentang pentingnya kedaulatan ekonomi, penguasaan 
+            teknologi, dan diplomasi yang kuat untuk melindungi kekayaan alam bangsa.
+        </p>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">📚 Daftar Pustaka</h3>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; font-size: 0.95rem; color: var(--text-gray);">
+            <li>Reid, A. (2011). <em>Asia Tenggara dalam Lintasan Sejarah</em>. Jakarta: Yayasan Pustaka Obor Indonesia.</li>
+            <li>Boxer, C. R. (1965). <em>The Dutch Seaborne Empire: 1600-1800</em>. London: Hutchinson.</li>
+            <li>Supriadi. (2024). <em>Sejarah Kelas X SMK Kurikulum Merdeka</em>. Bukittinggi: FTIK UIN Bukittinggi.</li>
+            <li>Andaya, L. Y. (2000). <em>The World of Maluku</em>. Honolulu: University of Hawaii Press.</li>
+        </ul>
+
+        <div style="margin-top: 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <a href="13.html" target="_blank" class="btn btn-outline">← Kembali ke Pertemuan 13</a>
+            <a href="#uji-formatif" class="btn btn-primary">Lanjut ke Uji Formatif ↓</a>
+        </div>
+
+        <!-- Formative Test Section -->
+        <div class="test-section" id="uji-formatif">
+            <div class="test-header">
+                <h2>📋 Uji Formatif 14: Jalur Rempah pada Masa Islam</h2>
+                <p>Materi: Peran kesultanan Islam dalam perdagangan, dampak bagi Nusantara, dan pengaruhnya terhadap dunia internasional.</p>
+                <p class="warning-text" id="warningMsg">⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu!</p>
+            </div>
+
+            <form id="formatifForm">
+                <h3 style="margin-bottom: 1.5rem; color: var(--dark-gold);">📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label>* Nama Lengkap</label>
+                        <input type="text" id="nama" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* NIS</label>
+                        <input type="text" id="nis" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Tanggal Ujian</label>
+                        <input type="date" id="tanggal" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Kelas</label>
+                        <select id="kelas" class="form-control" required>
+                            <option value="">Pilih Kelas</option>
+                            <option value="X TKJ 1">X TKJ 1</option>
+                            <option value="X TKJ 2">X TKJ 2</option>
+                            <option value="X TBSM 1">X TBSM 1</option>
+                            <option value="X TBSM 2">X TBSM 2</option>
+                            <option value="X DKV 1">X DKV 1</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">📋 Bagian A – Pilihan Ganda (10 Soal, 10 poin/soal)</h3>
+                
+                <div class="question-block">
+                    <p class="question-text">1. Kesultanan yang memegang peran sebagai pusat transit (entrepot) terbesar di Asia Tenggara pada abad ke-15 sebelum ditaklukkan Portugis adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> a. Kesultanan Aceh</label>
+                        <label><input type="radio" name="q1" value="b"> b. Kesultanan Malaka</label>
+                        <label><input type="radio" name="q1" value="c"> c. Kesultanan Demak</label>
+                        <label><input type="radio" name="q1" value="d"> d. Kesultanan Gowa-Tallo</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Komoditas rempah-rempah yang menjadi primadona dan hanya tumbuh secara alami di Kepulauan Maluku adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> a. Lada dan Kayu Manis</label>
+                        <label><input type="radio" name="q2" value="b"> b. Cengkeh dan Pala</label>
+                        <label><input type="radio" name="q2" value="c"> c. Kemenyan dan Kapur Barus</label>
+                        <label><input type="radio" name="q2" value="d"> d. Jahe dan Kunyit</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Peristiwa di Eropa pada tahun 1453 yang memutus jalur darat perdagangan rempah dan memicu penjelajahan samudra adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> a. Revolusi Industri</label>
+                        <label><input type="radio" name="q3" value="b"> b. Jatuhnya Konstantinopel ke tangan Turki Utsmani</label>
+                        <label><input type="radio" name="q3" value="c"> c. Penemuan Benua Amerika</label>
+                        <label><input type="radio" name="q3" value="d"> d. Perang Salib</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Dampak sosial dari perdagangan rempah-rempah di kota-kota pelabuhan Nusantara pada masa Islam adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="a"> a. Terisolasinya masyarakat lokal dari dunia luar</label>
+                        <label><input type="radio" name="q4" value="b"> b. Terbentuknya masyarakat kosmopolitan dengan percampuran berbagai etnis</label>
+                        <label><input type="radio" name="q4" value="c"> c. Penghapusan seluruh budaya lokal</label>
+                        <label><input type="radio" name="q4" value="d"> d. Dominasi penuh oleh pedagang Eropa sejak awal</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Kesultanan di Sulawesi Selatan yang dikenal sebagai "Ayam Jantan dari Timur" karena keberaniannya menentang monopoli VOC adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="a"> a. Kesultanan Bone</label>
+                        <label><input type="radio" name="q5" value="b"> b. Kesultanan Gowa-Tallo</label>
+                        <label><input type="radio" name="q5" value="c"> c. Kesultanan Buton</label>
+                        <label><input type="radio" name="q5" value="d"> d. Kesultanan Wajo</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">6. Salah satu dampak positif jalur perdagangan rempah bagi perkembangan agama di Nusantara adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> a. Jalur perdagangan menjadi medium penyebaran Islam yang damai</label>
+                        <label><input type="radio" name="q6" value="b"> b. Larangan total terhadap agama lokal</label>
+                        <label><input type="radio" name="q6" value="c"> c. Pemaksaan agama oleh pedagang asing</label>
+                        <label><input type="radio" name="q6" value="d"> d. Hilangnya seluruh kepercayaan tradisional</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">7. Perusahaan dagang raksasa yang didirikan oleh Belanda untuk memonopoli perdagangan rempah di Nusantara adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="a"> a. EIC (East India Company)</label>
+                        <label><input type="radio" name="q7" value="b"> b. VOC (Vereenigde Oost-Indische Compagnie)</label>
+                        <label><input type="radio" name="q7" value="c"> c. Cultuurstelsel</label>
+                        <label><input type="radio" name="q7" value="d"> d. Maskapai Pelayaran</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">8. Kesultanan yang menggantikan peran Malaka sebagai pusat perdagangan di ujung utara Sumatera setelah tahun 1511 adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> a. Kesultanan Aceh Darussalam</label>
+                        <label><input type="radio" name="q8" value="b"> b. Kesultanan Deli</label>
+                        <label><input type="radio" name="q8" value="c"> c. Kesultanan Siak</label>
+                        <label><input type="radio" name="q8" value="d"> d. Kesultanan Jambi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">9. Istilah "Uli Lima" dan "Uli Siwa" dalam konteks perdagangan di Maluku merujuk pada...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="a"> a. Jenis kapal yang digunakan untuk berdagang</label>
+                        <label><input type="radio" name="q9" value="b"> b. Persekutuan dagang yang dipimpin oleh Ternate (Lima) dan Tidore (Sembilan)</label>
+                        <label><input type="radio" name="q9" value="c"> c. Pajak yang dikenakan oleh Portugis</label>
+                        <label><input type="radio" name="q9" value="d"> d. Nama pelabuhan utama di Maluku</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">10. Pelajaran utama dari sejarah monopoli perdagangan rempah oleh bangsa Eropa bagi Indonesia saat ini adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> a. Menutup diri dari perdagangan internasional</label>
+                        <label><input type="radio" name="q10" value="b"> b. Pentingnya penguasaan teknologi, nilai tambah produk, dan kedaulatan ekonomi</label>
+                        <label><input type="radio" name="q10" value="c"> c. Mengandalkan sepenuhnya pada investasi asing</label>
+                        <label><input type="radio" name="q10" value="d"> d. Menjual sumber daya alam mentah semurah mungkin</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">✍️ Bagian B – Essay (Penilaian Mandiri)</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-gray);">
+                    <em>Jawablah pertanyaan di bawah ini pada kertas atau kolom catatan Anda, lalu centang kotak di bawah jika jawaban Anda sudah memuat konsep kunci yang disebutkan. Setiap centang bernilai 5 poin (Total 20 poin/soal).</em>
+                </p>
+
+                <div class="question-block">
+                    <p class="question-text">1. Jelaskan peran strategis Kesultanan Malaka dan Kesultanan Aceh dalam menguasai jalur perdagangan rempah pada abad ke-15 dan ke-16!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Malaka: Berperan sebagai entepot (pusat transit) utama yang menghubungkan pedagang Asia.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Aceh: Menggantikan peran Malaka setelah 1511, menguasai Selat Malaka dan perdagangan lada.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Keduanya menerapkan kebijakan pelabuhan yang menarik pedagang asing.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Memiliki armada laut yang kuat untuk melindungi jalur perdagangan dari bajak laut atau ancaman asing.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Analisis dampak ekonomi dan sosial dari perdagangan rempah-rempah terhadap masyarakat pesisir di Nusantara pada masa Islam!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Ekonomi: Tumbuhnya kota pelabuhan yang makmur dan munculnya kelas pedagang kaya (borjuis).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Ekonomi: Penggunaan mata uang (koin) mulai menggantikan sistem barter murni.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Sosial: Terbentuknya masyarakat kosmopolitan (percampuran etnis Melayu, Jawa, Arab, Cina, India).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Sosial: Penyebaran agama Islam yang berjalan beriringan dengan aktivitas perdagangan.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Mengapa bangsa Eropa (Portugis, Spanyol, Belanda) sangat berambisi untuk menguasai jalur rempah di Nusantara? Jelaskan dampaknya bagi dunia internasional!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Ambisi: Rempah-rempah bernilai sangat tinggi (disetarakan dengan emas) untuk pengawet dan obat.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Ambisi: Keinginan untuk memotong peran perantara (pedagang Arab/Venesia) untuk mendapatkan keuntungan maksimal.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Dampak Global: Memicu era Penjelajahan Samudra dan penemuan rute laut baru.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Dampak Global: Lahirnya sistem kapitalisme global dan era kolonialisme/imperialisme di Asia.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Bagaimana hubungan antara penyebaran agama Islam dengan jalur perdagangan rempah di Nusantara? Berikan contoh konkret!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Jalur perdagangan menjadi saluran (channel) utama masuknya pedagang Muslim ke Nusantara.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Interaksi damai di pelabuhan memudahkan proses dakwah melalui keteladanan dan akulturasi budaya.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Contoh konkret: Peran Wali Songo yang memanfaatkan jalur perdagangan pesisir utara Jawa untuk dakwah.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Contoh konkret: Pernikahan antara pedagang Muslim dengan putri bangsawan lokal yang mempercepat islamisasi.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Hubungkan sejarah kejayaan jalur rempah Nusantara dengan potensi pengembangan komoditas lokal Indonesia di pasar global saat ini (relevansi untuk siswa SMK)!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Dulu Nusantara hanya menjual bahan mentah; sekarang harus fokus pada hilirisasi dan nilai tambah produk.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Pentingnya penguasaan teknologi dan inovasi (relevan dengan kompetensi SMK) untuk daya saing global.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Perlunya membangun branding dan pemasaran digital untuk komoditas lokal (kopi, rempah, kerajinan).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Semangat kemandirian ekonomi agar tidak kembali terjebak dalam ketergantungan pada pihak asing.</label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                </div>
+
+                <!-- Result Box -->
+                <div class="result-box" id="resultBox">
+                    <h3 style="color: var(--primary-gold); margin-bottom: 1rem;">📊 Hasil Uji Formatif 14</h3>
+                    <div class="score-display" id="totalScore">0</div>
+                    <p style="margin: 1rem 0; font-size: 1.1rem;">
+                        Bagian A (PG): <span id="scorePG" style="color: var(--primary-gold); font-weight: 700;">0</span>/100 | 
+                        Bagian B (Essay): <span id="scoreEssay" style="color: var(--primary-gold); font-weight: 700;">0</span>/100
+                    </p>
+                    <p id="feedbackText" style="margin-bottom: 1.5rem; font-style: italic;"></p>
+                    
+                    <div class="action-buttons">
+                        <button type="button" class="btn-action btn-pdf" onclick="unduhPDF()">📥 UNDUH PDF LENGKAP</button>
+                        <button type="button" class="btn-action btn-email" onclick="kirimEmail()">✉️ KIRIM EMAIL KE GURU</button>
+                        <button type="button" class="btn-action btn-reset" onclick="mulaiUlang()">🔄 MULAI ULANG</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Kunci Jawaban PG Pertemuan 14
+        const kunciPG = {
+            q1: 'b', q2: 'b', q3: 'b', q4: 'b', q5: 'b',
+            q6: 'a', q7: 'b', q8: 'a', q9: 'b', q10: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+            const warningMsg = document.getElementById('warningMsg');
+
+            // Validasi Data
+            if (!nama || !nis || !tanggal || !kelas) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua Data Siswa terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            // Validasi PG (harus dijawab semua)
+            let allPGAnswered = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    allPGAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allPGAnswered) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            warningMsg.style.display = 'none';
+
+            // Hitung Skor PG
+            let skorPG = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (selected === kunciPG[`q${i}`]) {
+                    skorPG += 10;
+                }
+            }
+
+            // Hitung Skor Essay (Self-Assessment)
+            let skorEssay = 0;
+            const essayChecks = document.querySelectorAll('.essay-check:checked');
+            skorEssay = essayChecks.length * 5; // 5 poin per checklist (20 checklist total x 5 = 100)
+
+            // Total Skor
+            const totalSkor = skorPG + skorEssay;
+
+            // Tampilkan Hasil
+            document.getElementById('scorePG').textContent = skorPG;
+            document.getElementById('scoreEssay').textContent = skorEssay;
+            document.getElementById('totalScore').textContent = totalSkor;
+            
+            const feedback = document.getElementById('feedbackText');
+            if (totalSkor >= 85) {
+                feedback.textContent = '🌟 Luar biasa! Pemahaman Anda tentang jalur rempah pada masa Islam dan dampak globalnya sangat komprehensif.';
+            } else if (totalSkor >= 70) {
+                feedback.textContent = '👍 Bagus! Anda memahami konsep dasar, namun perlu pendalaman pada detail peran kesultanan atau dampak ekonomi.';
+            } else {
+                feedback.textContent = '📚 Perlu belajar lagi. Silakan baca ulang materi tentang peran kesultanan Islam dan dampak jalur rempah.';
+            }
+
+            document.getElementById('resultBox').classList.add('show');
+            
+            // Disable form setelah submit
+            const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+            inputs.forEach(input => input.disabled = true);
+            
+            window.scrollTo({ top: document.getElementById('resultBox').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function unduhPDF() {
+            const element = document.getElementById('uji-formatif');
+            const nama = document.getElementById('nama').value;
+            const opt = {
+                margin: 10,
+                filename: `Uji_Formatif_14_Jalur_Rempah_Islam_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const skorPG = document.getElementById('scorePG').textContent;
+            const skorEssay = document.getElementById('scoreEssay').textContent;
+            const total = document.getElementById('totalScore').textContent;
+
+            const subject = `Hasil Uji Formatif 14 (Jalur Rempah Masa Islam) - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Hafiza, S.Pd,\n\nBerikut adalah hasil Uji Formatif 14 saya:\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\n\nSkor Pilihan Ganda: ${skorPG}/100\nSkor Essay (Self-Assessment): ${skorEssay}/100\nTotal Skor: ${total}/200\n\nTerima kasih.`;
+            
+            window.location.href = `mailto:hafizafizalubi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function mulaiUlang() {
+            if (confirm('Apakah Anda yakin ingin mengulang uji formatif? Semua jawaban akan dihapus.')) {
+                document.getElementById('formatifForm').reset();
+                document.getElementById('resultBox').classList.remove('show');
+                
+                const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+                inputs.forEach(input => input.disabled = false);
+                
+                document.getElementById('warningMsg').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

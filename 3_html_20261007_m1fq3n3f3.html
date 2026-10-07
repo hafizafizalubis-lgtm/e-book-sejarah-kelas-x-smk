@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 3: Penelitian & Manfaat Sejarah - Sejarah Kelas X SMK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-gold: #B8941F;
+            --cream: #F5F0E6;
+            --dark: #1A1A1A;
+            --text-gray: #4A4A4A;
+            --white: #FFFFFF;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f0e6 0%, #e8e0d0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        .navbar {
+            background: var(--dark);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        /* Hero Chapter */
+        .chapter-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .chapter-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
+        }
+        .chapter-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .chapter-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .chapter-objective {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            position: relative;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-outline {
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+        .btn-outline:hover { background: var(--primary-gold); color: var(--dark); }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: var(--white);
+            margin-top: -2rem;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Typography & Components */
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--dark);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-gold);
+            display: inline-block;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-left: 4px solid var(--primary-gold);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .case-study {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .case-study h4 { color: var(--dark-gold); margin-bottom: 0.5rem; }
+        .reflection {
+            background: var(--dark);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .reflection h4 { color: var(--primary-gold); margin-bottom: 0.5rem; }
+
+        /* Tables */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .styled-table th {
+            background: var(--dark);
+            color: var(--primary-gold);
+            padding: 1rem;
+            text-align: left;
+            font-family: 'Playfair Display', serif;
+        }
+        .styled-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .styled-table tr:hover { background: var(--cream); }
+
+        /* Video Placeholder */
+        .video-placeholder {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            margin: 1.5rem 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        .video-placeholder span { font-size: 3rem; margin-bottom: 0.5rem; }
+
+        /* Formative Test Styles */
+        .test-section {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+            border: 2px solid var(--primary-gold);
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+        .question-block {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #eee;
+        }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .options label {
+            display: block;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 0.75rem; }
+        
+        .essay-checklist {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+        }
+        .essay-checklist label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .essay-checklist input[type="checkbox"] {
+            margin-top: 0.25rem;
+            accent-color: var(--primary-gold);
+        }
+
+        .result-box {
+            background: var(--dark);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+        .result-box.show { display: block; animation: fadeIn 0.5s; }
+        .score-display {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-action {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-submit { background: var(--primary-gold); color: var(--dark); }
+        .btn-pdf { background: var(--dark); color: var(--primary-gold); border: 1px solid var(--primary-gold); }
+        .btn-email { background: #2563eb; color: white; }
+        .btn-reset { background: var(--error); color: white; }
+        .btn-action:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .warning-text {
+            color: var(--error);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .chapter-hero h1 { font-size: 1.75rem; }
+            .container { padding: 2rem 1rem; }
+            .action-buttons { flex-direction: column; }
+            .btn-action { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Sejarah Kelas X</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li><a href="index.html#bab">Daftar Bab</a></li>
+                <li><a href="index.html#kontak">Penulis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chapter Hero -->
+    <section class="chapter-hero">
+        <span class="chapter-badge">Pertemuan 3</span>
+        <h1>Penelitian & Manfaat Sejarah</h1>
+        <p class="chapter-objective">
+            Memahami metode penelitian sejarah (heuristik, verifikasi, interpretasi, historiografi) 
+            serta manfaat dan fungsi mempelajari sejarah bagi kehidupan individu, bangsa, dan negara.
+        </p>
+        <div class="chapter-nav">
+            <a href="2.html" class="btn btn-outline">← Pertemuan 2</a>
+            <a href="#mulai-baca" class="btn btn-primary">Mulai Membaca</a>
+            <a href="4.html" class="btn btn-outline">Pertemuan 4 →</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container" id="mulai-baca">
+        
+        <h2 class="section-title">Pendahuluan</h2>
+        <p>
+            Sejarah bukan sekadar kumpulan cerita masa lalu, melainkan sebuah ilmu yang memiliki metode 
+            ilmiah tersendiri. Untuk menghasilkan narasi sejarah yang dapat dipertanggungjawabkan, 
+            seorang sejarawan harus melalui serangkaian tahapan penelitian yang sistematis dan ketat. 
+            Tahapan ini dimulai dari pengumpulan sumber, kritik sumber, interpretasi, hingga penulisan 
+            (historiografi).
+        </p>
+        <p style="margin-top: 1rem;">
+            Selain memahami <em>bagaimana</em> sejarah diteliti, siswa juga perlu memahami <em>mengapa</em> 
+            sejarah perlu dipelajari. Sejarah memiliki empat fungsi utama: edukatif, inspiratif, instruktif, 
+            dan rekreatif. Pemahaman terhadap fungsi-fungsi ini akan membantu siswa melihat relevansi 
+            sejarah dalam kehidupan sehari-hari dan membangun identitas sebagai bangsa Indonesia.
+        </p>
+
+        <div class="highlight-box">
+            <h3>🔑 Konsep Kunci</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><strong>Heuristik:</strong> Tahap pengumpulan sumber-sumber sejarah (primer dan sekunder).</li>
+                <li><strong>Verifikasi (Kritik Sumber):</strong> Proses menguji keaslian dan kredibilitas sumber (kritik eksternal & internal).</li>
+                <li><strong>Interpretasi:</strong> Penafsiran terhadap fakta-fakta sejarah yang telah diverifikasi.</li>
+                <li><strong>Historiografi:</strong> Tahap penulisan kisah sejarah berdasarkan hasil penelitian.</li>
+                <li><strong>Fungsi Edukatif:</strong> Sejarah memberikan pelajaran moral dan kebijaksanaan.</li>
+                <li><strong>Fungsi Inspiratif:</strong> Sejarah memberikan ilham dan semangat.</li>
+                <li><strong>Fungsi Instruktif:</strong> Sejarah memberikan keterampilan dan pengetahuan teknis.</li>
+                <li><strong>Fungsi Rekreatif:</strong> Sejarah memberikan pengalaman "berwisata" ke masa lalu.</li>
+            </ul>
+        </div>
+
+        <div class="case-study">
+            <h4> Studi Kasus 1: Kontroversi Sumber Sejarah G30S/PKI</h4>
+            <p>
+                Peristiwa G30S/PKI 1965 menjadi contoh nyata pentingnya metode penelitian sejarah. 
+                Berbagai versi narasi muncul karena perbedaan sumber yang digunakan: ada yang bersumber 
+                dari dokumen militer, kesaksian korban, atau catatan partai politik. Tanpa verifikasi 
+                yang ketat (kritik internal dan eksternal), narasi sejarah dapat menjadi alat propaganda 
+                daripada kebenaran ilmiah.
+            </p>
+            <p style="margin-top: 1rem; font-weight: 600; color: var(--dark-gold);">
+                Pembelajaran: Metode penelitian sejarah yang ketat (heuristik → verifikasi → interpretasi → historiografi) 
+                sangat penting untuk menghasilkan narasi yang objektif dan dapat dipertanggungjawabkan.
+            </p>
+        </div>
+
+        <div class="reflection">
+            <h4>💭 Refleksi untuk Siswa SMK</h4>
+            <p>
+                Sebagai siswa SMK, memahami metode penelitian sejarah melatih Anda berpikir kritis dan 
+                sistematis — keterampilan yang sangat dibutuhkan di dunia kerja. Misalnya, dalam jurusan 
+                DKV, kemampuan meneliti dan memverifikasi sumber visual sangat penting. Dalam jurusan 
+                TBSM, memahami sejarah perkembangan teknologi otomotif membantu Anda menjadi mekanik 
+                yang tidak hanya terampil, tetapi juga memahami akar profesi Anda.
+            </p>
+        </div>
+
+        <h2 class="section-title">3.1 Metode Penelitian Sejarah</h2>
+        <p>
+            Menurut Kuntowijoyo (2013), penelitian sejarah terdiri dari empat tahap utama yang harus 
+            dilalui secara berurutan. Setiap tahap memiliki peran kritis dalam menghasilkan karya 
+            sejarah yang ilmiah.
+        </p>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Tahap</th>
+                    <th>Nama</th>
+                    <th>Aktivitas Utama</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>Heuristik</td>
+                    <td>Mengumpulkan sumber sejarah (primer & sekunder)</td>
+                    <td>Kumpulan sumber/bukti sejarah</td>
+                </tr>
+                <tr>
+                    <td><strong>2</strong></td>
+                    <td>Verifikasi (Kritik)</td>
+                    <td>Menguji keaslian (eksternal) dan kredibilitas (internal) sumber</td>
+                    <td>Fakta-fakta sejarah yang terverifikasi</td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>Interpretasi</td>
+                    <td>Menafsirkan fakta dan menyusun hubungan sebab-akibat</td>
+                    <td>Analisis dan sintesis sejarah</td>
+                </tr>
+                <tr>
+                    <td><strong>4</strong></td>
+                    <td>Historiografi</td>
+                    <td>Menuliskan kisah sejarah secara naratif</td>
+                    <td>Karya tulis sejarah (buku, artikel, dll)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">3.1.1 Heuristik: Pengumpulan Sumber</h3>
+        <p>
+            Heuristik berasal dari bahasa Yunani <em>heuriskein</em> yang berarti "menemukan". 
+            Pada tahap ini, sejarawan mengumpulkan berbagai sumber yang relevan dengan topik penelitian.
+        </p>
+        <div class="highlight-box">
+            <h4>Jenis-Jenis Sumber Sejarah:</h4>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><strong>Sumber Primer:</strong> Sumber yang berasal langsung dari pelaku atau saksi peristiwa (artefak, dokumen asli, foto, rekaman, kesaksian langsung).</li>
+                <li><strong>Sumber Sekunder:</strong> Sumber yang merupakan olahan dari sumber primer (buku teks, artikel jurnal, ensiklopedia).</li>
+                <li><strong>Sumber Tersier:</strong> Kompilasi dari sumber sekunder (kamus, bibliografi).</li>
+            </ul>
+        </div>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">3.1.2 Verifikasi (Kritik Sumber)</h3>
+        <p>
+            Verifikasi adalah proses menguji keabsahan sumber. Terdapat dua jenis kritik:
+        </p>
+        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+            <li style="margin-bottom: 0.75rem;"><strong>Kritik Eksternal:</strong> Menguji keaslian fisik sumber (usia dokumen, bahan, tinta, tanda tangan). Bertujuan menjawab: "Apakah sumber ini asli?"</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Kritik Internal:</strong> Menguji kredibilitas isi sumber (apakah penulis jujur, kompeten, tidak bias?). Bertujuan menjawab: "Apakah isi sumber dapat dipercaya?"</li>
+        </ul>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">3.1.3 Interpretasi</h3>
+        <p>
+            Interpretasi adalah tahap menafsirkan fakta-fakta yang telah diverifikasi menjadi satu 
+            kesatuan yang masuk akal. Pada tahap ini, sejarawan melakukan <strong>analisis</strong> 
+            (menguraikan fakta) dan <strong>sintesis</strong> (menyusun fakta menjadi narasi utuh). 
+            Interpretasi harus bersifat objektif, meskipun subjektivitas sejarawan tidak dapat 
+            dihindari sepenuhnya.
+        </p>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">3.1.4 Historiografi</h3>
+        <p>
+            Historiografi adalah tahap penulisan kisah sejarah. Karya sejarah yang baik harus memenuhi 
+            unsur: <strong>faktual</strong> (berdasarkan fakta), <strong>objektif</strong> (tidak memihak), 
+            dan <strong>komprehensif</strong> (menyeluruh). Historiografi di Indonesia telah berkembang 
+            dari historiografi tradisional (bercorak istanasentris) ke historiografi modern (bersifat 
+            ilmiah dan rakyat-sentris).
+        </p>
+
+        <div class="video-placeholder">
+            <span>▶</span>
+            <p>Video: Metode Penelitian Sejarah dari Heuristik hingga Historiografi</p>
+            <small>Sumber: Kanal Pendidikan Sejarah / Youtube</small>
+        </div>
+
+        <h2 class="section-title">3.2 Manfaat dan Fungsi Mempelajari Sejarah</h2>
+        <p>
+            Sejarah bukan ilmu yang sia-sia. Menurut Kuntowijoyo, sejarah memiliki empat fungsi utama 
+            yang saling melengkapi:
+        </p>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Fungsi</th>
+                    <th>Penjelasan</th>
+                    <th>Contoh Penerapan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Edukatif</strong></td>
+                    <td>Sejarah memberikan pelajaran moral dan kebijaksanaan dari pengalaman masa lalu.</td>
+                    <td>Belajar dari kegagalan G30S/PKI agar demokrasi tidak disalahgunakan.</td>
+                </tr>
+                <tr>
+                    <td><strong>Inspiratif</strong></td>
+                    <td>Sejarah memberikan ilham, semangat, dan motivasi.</td>
+                    <td>Kisah perjuangan Sisingamangaraja XII menginspirasi semangat nasionalisme.</td>
+                </tr>
+                <tr>
+                    <td><strong>Instruktif</strong></td>
+                    <td>Sejarah memberikan keterampilan dan pengetahuan teknis.</td>
+                    <td>Mempelajari sejarah teknologi untuk mengembangkan inovasi baru.</td>
+                </tr>
+                <tr>
+                    <td><strong>Rekreatif</strong></td>
+                    <td>Sejarah memberikan pengalaman "berwisata" ke masa lalu.</td>
+                    <td>Membaca buku sejarah atau mengunjungi museum Candi Borobudur.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">3.2.1 Manfaat Sejarah bagi Kehidupan</h3>
+        <div class="highlight-box">
+            <ol style="margin-left: 1.5rem;">
+                <li><strong>Membangun Identitas Nasional:</strong> Sejarah membantu bangsa Indonesia memahami jati diri sebagai bangsa yang beragam namun satu.</li>
+                <li><strong>Melatih Berpikir Kritis:</strong> Metode penelitian sejarah melatih siswa menganalisis bukti dan menghindari hoaks.</li>
+                <li><strong>Memberikan Perspektif Jangka Panjang:</strong> Sejarah mengajarkan bahwa setiap masalah memiliki akar dan solusi yang perlu waktu.</li>
+                <li><strong>Menghargai Jasa Pahlawan:</strong> Memahami perjuangan masa lalu menumbuhkan rasa syukur dan tanggung jawab.</li>
+                <li><strong>Mempersiapkan Masa Depan:</strong> "Bangsa yang besar adalah bangsa yang menghargai jasa pahlawannya" — Ir. Soekarno.</li>
+            </ol>
+        </div>
+
+        <div class="case-study">
+            <h4> Studi Kasus 2: Sejarah sebagai Alat Melawan Hoaks</h4>
+            <p>
+                Di era digital, banyak beredar hoaks sejarah seperti "Soekarno adalah agen komunis" atau 
+                "PKI yang memproklamasikan kemerdekaan". Siswa yang memahami metode penelitian sejarah 
+                dapat memverifikasi klaim tersebut dengan merujuk pada sumber primer (teks proklamasi, 
+                rekaman suara Soekarno, foto peristiwa) dan menolak narasi yang tidak berdasar.
+            </p>
+            <p style="margin-top: 1rem; font-weight: 600; color: var(--dark-gold);">
+                Pembelajaran: Metode penelitian sejarah adalah "senjata" utama melawan disinformasi 
+                di era post-truth.
+            </p>
+        </div>
+
+        <h2 class="section-title">Kesimpulan</h2>
+        <p>
+            Penelitian sejarah adalah proses ilmiah yang terdiri dari empat tahap: heuristik, verifikasi, 
+            interpretasi, dan historiografi. Setiap tahap memiliki peran vital dalam menghasilkan narasi 
+            sejarah yang objektif dan dapat dipertanggungjawabkan. Di sisi lain, mempelajari sejarah 
+            memberikan manfaat nyata melalui empat fungsinya: edukatif, inspiratif, instruktif, dan rekreatif. 
+            Bagi siswa SMK, pemahaman ini tidak hanya memperkaya wawasan, tetapi juga melatih keterampilan 
+            berpikir kritis yang sangat dibutuhkan di dunia kerja abad ke-21.
+        </p>
+
+        <h3 style="margin-top: 2rem; font-size: 1.25rem;">📚 Daftar Pustaka</h3>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; font-size: 0.95rem; color: var(--text-gray);">
+            <li>Kuntowijoyo. (2013). <em>Pengantar Ilmu Sejarah</em>. Yogyakarta: Bentang Pustaka.</li>
+            <li>Sartono Kartodirdjo. (1992). <em>Pendekatan Ilmu Sosial dalam Metodologi Sejarah</em>. Jakarta: Gramedia.</li>
+            <li>Moh. Ali, R. (1984). <em>Pengantar Ilmu Sejarah Indonesia</em>. Jakarta: Bharata Karya Aksara.</li>
+            <li>Supriadi. (2024). <em>Sejarah Kelas X SMK Kurikulum Merdeka</em>. Bukittinggi: FTIK UIN Bukittinggi.</li>
+            <li>Gottschalk, L. (1985). <em>Mengerti Sejarah</em>. Jakarta: UI Press.</li>
+        </ul>
+
+        <div style="margin-top: 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <a href="2.html" class="btn btn-outline">← Kembali ke Pertemuan 2</a>
+            <a href="#uji-formatif" class="btn btn-primary">Lanjut ke Uji Formatif ↓</a>
+        </div>
+
+        <!-- Formative Test Section -->
+        <div class="test-section" id="uji-formatif">
+            <div class="test-header">
+                <h2> Uji Formatif 3: Penelitian & Manfaat Sejarah</h2>
+                <p>Materi: Metode penelitian sejarah (heuristik, verifikasi, interpretasi, historiografi) dan fungsi sejarah (edukatif, inspiratif, instruktif, rekreatif).</p>
+                <p class="warning-text" id="warningMsg">⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu!</p>
+            </div>
+
+            <form id="formatifForm">
+                <h3 style="margin-bottom: 1.5rem; color: var(--dark-gold);">📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label>* Nama Lengkap</label>
+                        <input type="text" id="nama" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* NIS</label>
+                        <input type="text" id="nis" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Tanggal Ujian</label>
+                        <input type="date" id="tanggal" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>* Kelas</label>
+                        <select id="kelas" class="form-control" required>
+                            <option value="">Pilih Kelas</option>
+                            <option value="X TKJ 1">X TKJ 1</option>
+                            <option value="X TKJ 2">X TKJ 2</option>
+                            <option value="X TBSM 1">X TBSM 1</option>
+                            <option value="X TBSM 2">X TBSM 2</option>
+                            <option value="X DKV 1">X DKV 1</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">📋 Bagian A – Pilihan Ganda (10 Soal, 10 poin/soal)</h3>
+                
+                <div class="question-block">
+                    <p class="question-text">1. Tahap pertama dalam metode penelitian sejarah yang bertujuan mengumpulkan sumber-sumber sejarah disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> a. Heuristik</label>
+                        <label><input type="radio" name="q1" value="b"> b. Verifikasi</label>
+                        <label><input type="radio" name="q1" value="c"> c. Interpretasi</label>
+                        <label><input type="radio" name="q1" value="d"> d. Historiografi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Verifikasi dalam penelitian sejarah sering juga disebut sebagai...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> a. Penulisan sejarah</label>
+                        <label><input type="radio" name="q2" value="b"> b. Kritik sumber</label>
+                        <label><input type="radio" name="q2" value="c"> c. Interpretasi fakta</label>
+                        <label><input type="radio" name="q2" value="d"> d. Sintesis narasi</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Tahap interpretasi dalam penelitian sejarah adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> a. Mengumpulkan sumber primer</label>
+                        <label><input type="radio" name="q3" value="b"> b. Menguji keaslian fisik dokumen</label>
+                        <label><input type="radio" name="q3" value="c"> c. Menafsirkan fakta dan menyusun hubungan sebab-akibat</label>
+                        <label><input type="radio" name="q3" value="d"> d. Menuliskan kisah sejarah secara naratif</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Historiografi adalah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="a"> a. Pengumpulan sumber sejarah</label>
+                        <label><input type="radio" name="q4" value="b"> b. Penulisan kisah sejarah berdasarkan hasil penelitian</label>
+                        <label><input type="radio" name="q4" value="c"> c. Pengujian keaslian artefak</label>
+                        <label><input type="radio" name="q4" value="d"> d. Wawancara dengan saksi sejarah</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Fungsi sejarah yang memberikan pelajaran moral dan kebijaksanaan dari pengalaman masa lalu disebut fungsi...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="a"> a. Edukatif</label>
+                        <label><input type="radio" name="q5" value="b"> b. Inspiratif</label>
+                        <label><input type="radio" name="q5" value="c"> c. Instruktif</label>
+                        <label><input type="radio" name="q5" value="d"> d. Rekreatif</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">6. Kisah perjuangan Sisingamangaraja XII yang menginspirasi semangat nasionalisme merupakan contoh fungsi sejarah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> a. Edukatif</label>
+                        <label><input type="radio" name="q6" value="b"> b. Inspiratif</label>
+                        <label><input type="radio" name="q6" value="c"> c. Instruktif</label>
+                        <label><input type="radio" name="q6" value="d"> d. Rekreatif</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">7. Mempelajari sejarah teknologi untuk mengembangkan inovasi baru merupakan contoh fungsi sejarah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="a"> a. Edukatif</label>
+                        <label><input type="radio" name="q7" value="b"> b. Inspiratif</label>
+                        <label><input type="radio" name="q7" value="c"> c. Instruktif</label>
+                        <label><input type="radio" name="q7" value="d"> d. Rekreatif</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">8. Mengunjungi museum Candi Borobudur untuk merasakan pengalaman "berwisata" ke masa lalu merupakan contoh fungsi sejarah...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> a. Edukatif</label>
+                        <label><input type="radio" name="q8" value="b"> b. Inspiratif</label>
+                        <label><input type="radio" name="q8" value="c"> c. Instruktif</label>
+                        <label><input type="radio" name="q8" value="d"> d. Rekreatif</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">9. Sumber sejarah yang berasal langsung dari pelaku atau saksi peristiwa disebut...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="a"> a. Sumber primer</label>
+                        <label><input type="radio" name="q9" value="b"> b. Sumber sekunder</label>
+                        <label><input type="radio" name="q9" value="c"> c. Sumber tersier</label>
+                        <label><input type="radio" name="q9" value="d"> d. Sumber fiktif</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">10. Kritik internal dalam verifikasi sumber bertujuan untuk...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> a. Menguji keaslian fisik dokumen (usia, bahan, tinta)</label>
+                        <label><input type="radio" name="q10" value="b"> b. Menguji kredibilitas isi sumber (kejujuran, kompetensi penulis)</label>
+                        <label><input type="radio" name="q10" value="c"> c. Menuliskan kisah sejarah</label>
+                        <label><input type="radio" name="q10" value="d"> d. Mengumpulkan artefak dari situs</label>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2.5rem 0 1.5rem; color: var(--dark-gold);">✍️ Bagian B – Essay (Penilaian Mandiri)</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-gray);">
+                    <em>Jawablah pertanyaan di bawah ini pada kertas atau kolom catatan Anda, lalu centang kotak di bawah jika jawaban Anda sudah memuat konsep kunci yang disebutkan. Setiap centang bernilai 5 poin (Total 20 poin/soal).</em>
+                </p>
+
+                <div class="question-block">
+                    <p class="question-text">1. Jelaskan keempat tahap metode penelitian sejarah menurut Kuntowijoyo dan berikan contoh konkret masing-masing tahap!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Heuristik: pengumpulan sumber (primer/sekunder).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Verifikasi: kritik eksternal (fisik) dan internal (isi).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Interpretasi: penafsiran fakta dan analisis sebab-akibat.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e1"> Historiografi: penulisan narasi sejarah.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">2. Apa perbedaan antara sumber primer dan sumber sekunder? Berikan masing-masing dua contoh!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Sumber primer: berasal langsung dari pelaku/saksi peristiwa.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Sumber sekunder: olahan dari sumber primer (buku, artikel).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Dua contoh sumber primer yang tepat (artefak, dokumen asli, foto, kesaksian).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e2"> Dua contoh sumber sekunder yang tepat (buku teks, jurnal).</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">3. Jelaskan keempat fungsi sejarah (edukatif, inspiratif, instruktif, rekreatif) dan berikan contoh masing-masing!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Edukatif: pelajaran moral/kebijaksanaan + contoh.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Inspiratif: ilham/semangat + contoh.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Instruktif: keterampilan/pengetahuan teknis + contoh.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e3"> Rekreatif: pengalaman "berwisata" ke masa lalu + contoh.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">4. Mengapa metode penelitian sejarah penting untuk melawan hoaks di era digital? Jelaskan dengan argumen yang kuat!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Hoaks sejarah sering beredar di media sosial tanpa verifikasi.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Metode penelitian sejarah melatih verifikasi sumber (kritik internal/eksternal).</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Siswa dapat membedakan sumber primer dan sekunder.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e4"> Argumen tentang pentingnya literasi sejarah di era post-truth.</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p class="question-text">5. Analisis manfaat mempelajari sejarah bagi siswa SMK dalam konteks persiapan dunia kerja!</p>
+                    <div class="essay-checklist">
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Sejarah melatih berpikir kritis dan sistematis.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Sejarah membangun identitas dan karakter profesional.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Sejarah memberikan perspektif perkembangan teknologi/profesi.</label>
+                        <label><input type="checkbox" class="essay-check" data-q="e5"> Contoh konkret penerapan dalam jurusan SMK (TKJ/TBSM/DKV).</label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                </div>
+
+                <!-- Result Box -->
+                <div class="result-box" id="resultBox">
+                    <h3 style="color: var(--primary-gold); margin-bottom: 1rem;">📊 Hasil Uji Formatif 3</h3>
+                    <div class="score-display" id="totalScore">0</div>
+                    <p style="margin: 1rem 0; font-size: 1.1rem;">
+                        Bagian A (PG): <span id="scorePG" style="color: var(--primary-gold); font-weight: 700;">0</span>/100 | 
+                        Bagian B (Essay): <span id="scoreEssay" style="color: var(--primary-gold); font-weight: 700;">0</span>/100
+                    </p>
+                    <p id="feedbackText" style="margin-bottom: 1.5rem; font-style: italic;"></p>
+                    
+                    <div class="action-buttons">
+                        <button type="button" class="btn-action btn-pdf" onclick="unduhPDF()">📥 UNDUH PDF LENGKAP</button>
+                        <button type="button" class="btn-action btn-email" onclick="kirimEmail()">✉️ KIRIM EMAIL KE GURU</button>
+                        <button type="button" class="btn-action btn-reset" onclick="mulaiUlang()">🔄 MULAI ULANG</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Kunci Jawaban PG Pertemuan 3
+        const kunciPG = {
+            q1: 'a', q2: 'b', q3: 'c', q4: 'b', q5: 'a',
+            q6: 'b', q7: 'c', q8: 'd', q9: 'a', q10: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+            const warningMsg = document.getElementById('warningMsg');
+
+            // Validasi Data
+            if (!nama || !nis || !tanggal || !kelas) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua Data Siswa terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            // Validasi PG (harus dijawab semua)
+            let allPGAnswered = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    allPGAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allPGAnswered) {
+                warningMsg.style.display = 'block';
+                warningMsg.textContent = '⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+                return;
+            }
+
+            warningMsg.style.display = 'none';
+
+            // Hitung Skor PG
+            let skorPG = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (selected === kunciPG[`q${i}`]) {
+                    skorPG += 10;
+                }
+            }
+
+            // Hitung Skor Essay (Self-Assessment)
+            let skorEssay = 0;
+            const essayChecks = document.querySelectorAll('.essay-check:checked');
+            skorEssay = essayChecks.length * 5; // 5 poin per checklist (20 checklist total x 5 = 100)
+
+            // Total Skor
+            const totalSkor = skorPG + skorEssay;
+
+            // Tampilkan Hasil
+            document.getElementById('scorePG').textContent = skorPG;
+            document.getElementById('scoreEssay').textContent = skorEssay;
+            document.getElementById('totalScore').textContent = totalSkor;
+            
+            const feedback = document.getElementById('feedbackText');
+            if (totalSkor >= 85) {
+                feedback.textContent = '🌟 Luar biasa! Pemahaman Anda tentang metode penelitian sejarah dan manfaat sejarah sangat komprehensif.';
+            } else if (totalSkor >= 70) {
+                feedback.textContent = '👍 Bagus! Anda memahami konsep dasar, namun perlu pendalaman pada perbedaan kritik internal/eksternal atau fungsi sejarah.';
+            } else {
+                feedback.textContent = ' Perlu belajar lagi. Silakan baca ulang materi tentang 4 tahap penelitian sejarah dan 4 fungsi sejarah.';
+            }
+
+            document.getElementById('resultBox').classList.add('show');
+            
+            // Disable form setelah submit
+            const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+            inputs.forEach(input => input.disabled = true);
+            
+            window.scrollTo({ top: document.getElementById('resultBox').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function unduhPDF() {
+            const element = document.getElementById('uji-formatif');
+            const nama = document.getElementById('nama').value;
+            const opt = {
+                margin: 10,
+                filename: `Uji_Formatif_3_Penelitian_Sejarah_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const skorPG = document.getElementById('scorePG').textContent;
+            const skorEssay = document.getElementById('scoreEssay').textContent;
+            const total = document.getElementById('totalScore').textContent;
+
+            const subject = `Hasil Uji Formatif 3 (Penelitian & Manfaat Sejarah) - ${nama} (${kelas})`;
+            const body = `Yth. Ibu Hafiza, S.Pd,\n\nBerikut adalah hasil Uji Formatif 3 saya:\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\n\nSkor Pilihan Ganda: ${skorPG}/100\nSkor Essay (Self-Assessment): ${skorEssay}/100\nTotal Skor: ${total}/200\n\nTerima kasih.`;
+            
+            window.location.href = `mailto:hafizafizalubi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function mulaiUlang() {
+            if (confirm('Apakah Anda yakin ingin mengulang uji formatif? Semua jawaban akan dihapus.')) {
+                document.getElementById('formatifForm').reset();
+                document.getElementById('resultBox').classList.remove('show');
+                
+                const inputs = document.querySelectorAll('#formatifForm input, #formatifForm select');
+                inputs.forEach(input => input.disabled = false);
+                
+                document.getElementById('warningMsg').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop - 100, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
